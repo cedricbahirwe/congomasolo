@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB95D08E2AA6545D00B56740 /* CongoMasoloApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D08D2AA6545D00B56740 /* CongoMasoloApp.swift */; };
+		CB95D0902AA6545D00B56740 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D08F2AA6545D00B56740 /* ContentView.swift */; };
+		CB95D0922AA6546000B56740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB95D0912AA6546000B56740 /* Assets.xcassets */; };
+		CB95D0952AA6546000B56740 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB95D0942AA6546000B56740 /* Preview Assets.xcassets */; };
+		CB95D09F2AA6546000B56740 /* CongoMasoloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D09E2AA6546000B56740 /* CongoMasoloTests.swift */; };
+		CB95D0A92AA6546000B56740 /* CongoMasoloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0A82AA6546000B56740 /* CongoMasoloUITests.swift */; };
+		CB95D0AB2AA6546000B56740 /* CongoMasoloUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0AA2AA6546000B56740 /* CongoMasoloUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB95D09B2AA6546000B56740 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB95D0822AA6545D00B56740 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB95D0892AA6545D00B56740;
+			remoteInfo = CongoMasolo;
+		};
+		CB95D0A52AA6546000B56740 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB95D0822AA6545D00B56740 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB95D0892AA6545D00B56740;
+			remoteInfo = CongoMasolo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CB95D08A2AA6545D00B56740 /* CongoMasolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CongoMasolo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB95D08D2AA6545D00B56740 /* CongoMasoloApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongoMasoloApp.swift; sourceTree = "<group>"; };
+		CB95D08F2AA6545D00B56740 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CB95D0912AA6546000B56740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB95D0942AA6546000B56740 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CB95D09A2AA6546000B56740 /* CongoMasoloTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CongoMasoloTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB95D09E2AA6546000B56740 /* CongoMasoloTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongoMasoloTests.swift; sourceTree = "<group>"; };
+		CB95D0A42AA6546000B56740 /* CongoMasoloUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CongoMasoloUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB95D0A82AA6546000B56740 /* CongoMasoloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongoMasoloUITests.swift; sourceTree = "<group>"; };
+		CB95D0AA2AA6546000B56740 /* CongoMasoloUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongoMasoloUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB95D0872AA6545D00B56740 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB95D0972AA6546000B56740 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB95D0A12AA6546000B56740 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB95D0812AA6545D00B56740 = {
+			isa = PBXGroup;
+			children = (
+				CB95D08C2AA6545D00B56740 /* CongoMasolo */,
+				CB95D09D2AA6546000B56740 /* CongoMasoloTests */,
+				CB95D0A72AA6546000B56740 /* CongoMasoloUITests */,
+				CB95D08B2AA6545D00B56740 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB95D08B2AA6545D00B56740 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB95D08A2AA6545D00B56740 /* CongoMasolo.app */,
+				CB95D09A2AA6546000B56740 /* CongoMasoloTests.xctest */,
+				CB95D0A42AA6546000B56740 /* CongoMasoloUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB95D08C2AA6545D00B56740 /* CongoMasolo */ = {
+			isa = PBXGroup;
+			children = (
+				CB95D08D2AA6545D00B56740 /* CongoMasoloApp.swift */,
+				CB95D08F2AA6545D00B56740 /* ContentView.swift */,
+				CB95D0912AA6546000B56740 /* Assets.xcassets */,
+				CB95D0932AA6546000B56740 /* Preview Content */,
+			);
+			path = CongoMasolo;
+			sourceTree = "<group>";
+		};
+		CB95D0932AA6546000B56740 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CB95D0942AA6546000B56740 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CB95D09D2AA6546000B56740 /* CongoMasoloTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB95D09E2AA6546000B56740 /* CongoMasoloTests.swift */,
+			);
+			path = CongoMasoloTests;
+			sourceTree = "<group>";
+		};
+		CB95D0A72AA6546000B56740 /* CongoMasoloUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CB95D0A82AA6546000B56740 /* CongoMasoloUITests.swift */,
+				CB95D0AA2AA6546000B56740 /* CongoMasoloUITestsLaunchTests.swift */,
+			);
+			path = CongoMasoloUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB95D0892AA6545D00B56740 /* CongoMasolo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB95D0AE2AA6546000B56740 /* Build configuration list for PBXNativeTarget "CongoMasolo" */;
+			buildPhases = (
+				CB95D0862AA6545D00B56740 /* Sources */,
+				CB95D0872AA6545D00B56740 /* Frameworks */,
+				CB95D0882AA6545D00B56740 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CongoMasolo;
+			productName = CongoMasolo;
+			productReference = CB95D08A2AA6545D00B56740 /* CongoMasolo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB95D0992AA6546000B56740 /* CongoMasoloTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB95D0B12AA6546000B56740 /* Build configuration list for PBXNativeTarget "CongoMasoloTests" */;
+			buildPhases = (
+				CB95D0962AA6546000B56740 /* Sources */,
+				CB95D0972AA6546000B56740 /* Frameworks */,
+				CB95D0982AA6546000B56740 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB95D09C2AA6546000B56740 /* PBXTargetDependency */,
+			);
+			name = CongoMasoloTests;
+			productName = CongoMasoloTests;
+			productReference = CB95D09A2AA6546000B56740 /* CongoMasoloTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CB95D0A32AA6546000B56740 /* CongoMasoloUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB95D0B42AA6546000B56740 /* Build configuration list for PBXNativeTarget "CongoMasoloUITests" */;
+			buildPhases = (
+				CB95D0A02AA6546000B56740 /* Sources */,
+				CB95D0A12AA6546000B56740 /* Frameworks */,
+				CB95D0A22AA6546000B56740 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB95D0A62AA6546000B56740 /* PBXTargetDependency */,
+			);
+			name = CongoMasoloUITests;
+			productName = CongoMasoloUITests;
+			productReference = CB95D0A42AA6546000B56740 /* CongoMasoloUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB95D0822AA6545D00B56740 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					CB95D0892AA6545D00B56740 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					CB95D0992AA6546000B56740 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = CB95D0892AA6545D00B56740;
+					};
+					CB95D0A32AA6546000B56740 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = CB95D0892AA6545D00B56740;
+					};
+				};
+			};
+			buildConfigurationList = CB95D0852AA6545D00B56740 /* Build configuration list for PBXProject "CongoMasolo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB95D0812AA6545D00B56740;
+			productRefGroup = CB95D08B2AA6545D00B56740 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB95D0892AA6545D00B56740 /* CongoMasolo */,
+				CB95D0992AA6546000B56740 /* CongoMasoloTests */,
+				CB95D0A32AA6546000B56740 /* CongoMasoloUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB95D0882AA6545D00B56740 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB95D0952AA6546000B56740 /* Preview Assets.xcassets in Resources */,
+				CB95D0922AA6546000B56740 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB95D0982AA6546000B56740 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB95D0A22AA6546000B56740 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB95D0862AA6545D00B56740 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB95D0902AA6545D00B56740 /* ContentView.swift in Sources */,
+				CB95D08E2AA6545D00B56740 /* CongoMasoloApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB95D0962AA6546000B56740 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB95D09F2AA6546000B56740 /* CongoMasoloTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB95D0A02AA6546000B56740 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB95D0AB2AA6546000B56740 /* CongoMasoloUITestsLaunchTests.swift in Sources */,
+				CB95D0A92AA6546000B56740 /* CongoMasoloUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB95D09C2AA6546000B56740 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB95D0892AA6545D00B56740 /* CongoMasolo */;
+			targetProxy = CB95D09B2AA6546000B56740 /* PBXContainerItemProxy */;
+		};
+		CB95D0A62AA6546000B56740 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB95D0892AA6545D00B56740 /* CongoMasolo */;
+			targetProxy = CB95D0A52AA6546000B56740 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CB95D0AC2AA6546000B56740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CB95D0AD2AA6546000B56740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB95D0AF2AA6546000B56740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CongoMasolo/Preview Content\"";
+				DEVELOPMENT_TEAM = 6V9B6LUW22;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.incs.cedricbahirwe.CongoMasolo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB95D0B02AA6546000B56740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CongoMasolo/Preview Content\"";
+				DEVELOPMENT_TEAM = 6V9B6LUW22;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.incs.cedricbahirwe.CongoMasolo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CB95D0B22AA6546000B56740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6V9B6LUW22;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.incs.cedricbahirwe.CongoMasoloTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CongoMasolo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CongoMasolo";
+			};
+			name = Debug;
+		};
+		CB95D0B32AA6546000B56740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6V9B6LUW22;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.incs.cedricbahirwe.CongoMasoloTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CongoMasolo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CongoMasolo";
+			};
+			name = Release;
+		};
+		CB95D0B52AA6546000B56740 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6V9B6LUW22;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.incs.cedricbahirwe.CongoMasoloUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CongoMasolo;
+			};
+			name = Debug;
+		};
+		CB95D0B62AA6546000B56740 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6V9B6LUW22;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.incs.cedricbahirwe.CongoMasoloUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CongoMasolo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB95D0852AA6545D00B56740 /* Build configuration list for PBXProject "CongoMasolo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB95D0AC2AA6546000B56740 /* Debug */,
+				CB95D0AD2AA6546000B56740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB95D0AE2AA6546000B56740 /* Build configuration list for PBXNativeTarget "CongoMasolo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB95D0AF2AA6546000B56740 /* Debug */,
+				CB95D0B02AA6546000B56740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB95D0B12AA6546000B56740 /* Build configuration list for PBXNativeTarget "CongoMasoloTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB95D0B22AA6546000B56740 /* Debug */,
+				CB95D0B32AA6546000B56740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB95D0B42AA6546000B56740 /* Build configuration list for PBXNativeTarget "CongoMasoloUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB95D0B52AA6546000B56740 /* Debug */,
+				CB95D0B62AA6546000B56740 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB95D0822AA6545D00B56740 /* Project object */;
+}
