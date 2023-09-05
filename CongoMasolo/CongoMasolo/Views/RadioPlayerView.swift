@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
+import MediaPlayer
 
+@MainActor
 class RadioPlayerManager: ObservableObject {
 //    @Published var station: RadioStation
     @Published var isNewStation: Bool = false
@@ -109,6 +111,10 @@ class RadioPlayerManager: ObservableObject {
     }
     
     
+    func setupVolumeSlider() {
+        
+    }
+    
 }
 
 struct RadioPlayerView: View {
@@ -118,7 +124,7 @@ struct RadioPlayerView: View {
         self._radioManager = StateObject(wrappedValue: RadioPlayerManager(station))
     }
     
-    @State private var image: Image?
+//    @State private var image: Image?
     @State private var volume = 0.5
 
     var body: some View {
@@ -138,7 +144,7 @@ struct RadioPlayerView: View {
 //            .colorInvert()
             
             VStack {
-                (image ?? Image("stationImage"))
+                Image(uiImage: radioManager.albumImage ?? UIImage(named: "stationImage")!)
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: 250, minHeight: 180)
@@ -260,9 +266,9 @@ struct RadioPlayerView: View {
         .navigationTitle(radioManager.currentStation?.name ?? "")
         .preferredColorScheme(.dark)
         .task {
-            if let uiImage = await radioManager.currentStation?.getImage() {
-                self.image = Image(uiImage: uiImage)
-            }
+//            if let uiImage = await radioManager.currentStation?.getImage() {
+//                self.image = Image(uiImage: uiImage)
+//            }
         }
     }
 }

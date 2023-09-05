@@ -17,7 +17,8 @@ struct StationRow: View {
             (image ?? Image("stationImage"))
                 .resizable()
                 .scaledToFit()
-                .frame(width: 120, height: 75)
+                .frame(maxWidth: 120)
+                .frame(height: 75)
                 .cornerRadius(20)
                 .shadow(color: .black,
                         radius: 2,
