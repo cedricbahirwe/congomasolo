@@ -28,7 +28,7 @@ struct StationsView: View {
                 }
             }
             .background(.red)
-            .navigationTitle("X")
+            .navigationTitle("Congo Masolo")
             .sheet(isPresented: $showAboutView, content: AboutView.init)
             .navigationDestination(for: RadioStation.self, destination: RadioPlayerView.init)
             .toolbar {

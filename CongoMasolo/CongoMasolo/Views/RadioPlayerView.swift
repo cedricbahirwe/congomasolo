@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import MediaPlayer
+import AVKit
 
 struct RadioPlayerView: View {
     @StateObject private var radioManager: RadioPlayerManager
@@ -48,66 +48,67 @@ struct RadioPlayerView: View {
                 
                 
                 HStack(spacing: 12) {
+                    if !radioManager.previousButtonHidden {
+                        Button {
+                            radioManager.previousPressed()
+                        } label: {
+                            Image("btn-previous")
+                                .resizable()
+                                .frame(width: 45, height: 45)
+                        }
+                    }
+                    
                     Button {
-                        
+                        radioManager.playingPressed()
                     } label: {
-                        Image("btn-previous")
+                        Image(radioManager.playingButtonSelected ? "btn-pause" : "btn-play")
                             .resizable()
                             .frame(width: 45, height: 45)
                     }
                     
                     Button {
-                        
-                    } label: {
-                        Image("btn-play")
-                            .resizable()
-                            .frame(width: 45, height: 45)
-                    }
-                    
-                    Button {
-                        
+                        radioManager.stopPressed()
                     } label: {
                         Image("btn-stop")
                             .resizable()
                             .frame(width: 45, height: 45)
                     }
                     
-                    Button {
-                        
-                    } label: {
-                        Image("btn-next")
-                            .resizable()
-                            .frame(width: 45, height: 45)
+                    if !radioManager.nextButtonHidden {
+                        Button {
+                            radioManager.nextPressed()
+                        } label: {
+                            Image("btn-next")
+                                .resizable()
+                                .frame(width: 45, height: 45)
+                        }
                     }
-                    
                 }
                 .padding(.top, 30)
                 .padding(.bottom, 12)
                 
                 
-                HStack {
-                    Slider(
-                        value: $radioManager.volume,
-                        in: radioManager.volumRange,
-                        step: radioManager.volumeStep
-                    ) {
-                        Text("Values from 0 to 100")
-                    } minimumValueLabel: {
-                        Text("\(Image(systemName: "speaker.slash.fill"))")
-                    } maximumValueLabel: {
-                        Text("\(Image(systemName: "speaker.wave.3.fill"))")
-                    } onEditingChanged: { editing in
+                if radioManager.mpVolumSliderValue != nil {
+                    HStack {
+                        Image(systemName: "speaker.slash.fill")
+                        SliderView(slider: radioManager.mpVolumSliderValue!)
+                        Image(systemName: "speaker.wave.3.fill")
                     }
+                    .frame(height: 60)
+                    .padding(.vertical)
                 }
-                .frame(height: 60)
-                .padding(.vertical)
+                
                 
                 VStack(spacing: 8) {
-//                    Text(station.trackName)
-//                        .font(.title)
+                    if let songLabel = radioManager.songLabel {
+                        Text(songLabel)
+                            .font(.title)
+                    }
                     
-//                    Text(station.artistName)
-//                        .font(.title3)
+                    if let artistName = radioManager.artistLabel {
+                        Text(artistName)
+                            .font(.title3)
+                    }
                 }
                 .multilineTextAlignment(.center)
                 
@@ -118,12 +119,8 @@ struct RadioPlayerView: View {
                     
                     Spacer()
                     
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "airplayaudio")
-                            .imageScale(.large)
-                    }
+                    AirPlayButton()
+                        .frame(width: 45, height: 45)
                     
                     Spacer()
                     
@@ -141,7 +138,7 @@ struct RadioPlayerView: View {
                             Image(systemName: "info.circle")
                                 .imageScale(.large)
                         }
-
+                        
                     }
                     .tint(.primary)
                 }
@@ -151,10 +148,12 @@ struct RadioPlayerView: View {
         .navigationTitle(radioManager.currentStation?.name ?? "")
         .navigationBarTitleDisplayMode(.inline)
         .preferredColorScheme(.dark)
-        .task {
-//            if let uiImage = await radioManager.currentStation?.getImage() {
-//                self.image = Image(uiImage: uiImage)
-//            }
+        .toolbar {
+            Button {
+                
+            } label: {
+                Label("Now Playing", image: "NowPlayingBars-3")
+            }
         }
     }
 }
@@ -168,3 +167,17 @@ struct RadioPlayerView_Previews: PreviewProvider {
     }
 }
 #endif
+
+
+struct SliderView: UIViewRepresentable {
+    let slider: UISlider
+    
+    func makeUIView(context: Context) -> UISlider {
+        return slider
+    }
+    
+    func updateUIView(_ uiView: UISlider, context: Context) {
+        
+    }
+    
+}

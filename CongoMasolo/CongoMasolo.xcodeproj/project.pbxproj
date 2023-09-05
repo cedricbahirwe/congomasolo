@@ -38,6 +38,7 @@
 		CB95D0F82AA73F2300B56740 /* RadioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0F72AA73F2300B56740 /* RadioPlayerView.swift */; };
 		CB95D0FA2AA73F5B00B56740 /* RadionStations+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0F92AA73F5B00B56740 /* RadionStations+Preview.swift */; };
 		CB95D0FC2AA7653400B56740 /* RadioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0FB2AA7653400B56740 /* RadioPlayerManager.swift */; };
+		CB95D0FE2AA76E8B00B56740 /* AirPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0FD2AA76E8B00B56740 /* AirPlayButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		CB95D0F72AA73F2300B56740 /* RadioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerView.swift; sourceTree = "<group>"; };
 		CB95D0F92AA73F5B00B56740 /* RadionStations+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RadionStations+Preview.swift"; sourceTree = "<group>"; };
 		CB95D0FB2AA7653400B56740 /* RadioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerManager.swift; sourceTree = "<group>"; };
+		CB95D0FD2AA76E8B00B56740 /* AirPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 				CB95D0F22AA739FD00B56740 /* Rows */,
 				CB95D0EB2AA72BA300B56740 /* StationsView.swift */,
 				CB95D0F72AA73F2300B56740 /* RadioPlayerView.swift */,
+				CB95D0FD2AA76E8B00B56740 /* AirPlayButton.swift */,
 				CB95D0F02AA734A900B56740 /* AboutView.swift */,
 			);
 			path = Views;
@@ -418,6 +421,7 @@
 			files = (
 				CB95D0902AA6545D00B56740 /* ContentView.swift in Sources */,
 				CB95D0F12AA734A900B56740 /* AboutView.swift in Sources */,
+				CB95D0FE2AA76E8B00B56740 /* AirPlayButton.swift in Sources */,
 				CB95D0C72AA7161400B56740 /* RadioStation.swift in Sources */,
 				CB95D0DE2AA7221500B56740 /* FRadioMetadataExtractor.swift in Sources */,
 				CB95D08E2AA6545D00B56740 /* CongoMasoloApp.swift in Sources */,
@@ -527,7 +531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -581,7 +585,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -660,7 +664,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6V9B6LUW22;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.abc.incs.cedricbahirwe.CongoMasoloTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -668,6 +672,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CongoMasolo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CongoMasolo";
+				TVOS_DEPLOYMENT_TARGET = 16.0;
 			};
 			name = Debug;
 		};
@@ -680,7 +685,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6V9B6LUW22;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.abc.incs.cedricbahirwe.CongoMasoloTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -688,6 +693,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CongoMasolo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CongoMasolo";
+				TVOS_DEPLOYMENT_TARGET = 16.0;
 			};
 			name = Release;
 		};
