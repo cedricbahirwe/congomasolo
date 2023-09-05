@@ -28,9 +28,12 @@ struct Config {
     static let linkedIn =  "https://www.linkedin.com/in/cedricbahirwe"
     static let emailSubject = "From \(Bundle.main.appName) App"
     
-    static let aristoteInsta = "https://www.instagram.com/aristote_aml"
     static let stationRequest = "https://forms.gle/cFYhU5qRTFxHcRRT6"
     
     static let radioActivity = "com.abc.incs.cedricbahirwe.CongoMasolo.openRadio"
+    
+    // Acknowledgements
+    static let aristoteInsta = "https://www.instagram.com/aristote_aml"
+    static let sdkLink = "https://fethica.github.io/FRadioPlayer"
 }
 

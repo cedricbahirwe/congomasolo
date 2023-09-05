@@ -19,7 +19,7 @@ struct AboutView: View {
                 Image("appicon")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 120)
+                    .frame(width: 120, height: 120)
                     .cornerRadius(15)
                 
                 Text("Congo Masolo")
@@ -40,13 +40,16 @@ struct AboutView: View {
             .font(.body.weight(.semibold))
             
             ScrollView {
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 12) {
                     Text("Remerciements")
                         .font(.headline)
                     
-                    Link("- Aristote Mokekwa \(Image(systemName: "arrow.up.right.square"))", destination: URL(string: Config.aristoteInsta)!)
-                        .foregroundColor(Color.blue)
-                    
+                    Group {
+                        Link("- Aristote Mokekwa \(Image(systemName: "arrow.up.right.square"))", destination: URL(string: Config.aristoteInsta)!)
+                        
+                        Link("- Fethi El Hassasna \(Image(systemName: "arrow.up.right.square"))", destination: URL(string: Config.sdkLink)!)
+                    }
+                    .foregroundColor(Color.blue)
                 }
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
