@@ -10,8 +10,9 @@ import AVKit
 
 struct RadioPlayerView: View {
     @StateObject private var radioManager: RadioPlayerManager
+    @State private var showAboutView = false
     
-    init(_ station: RadioStation) {
+    init(_ station: RadioStation?) {
         self._radioManager = StateObject(wrappedValue: RadioPlayerManager(station))
     }
     
@@ -60,14 +61,13 @@ struct RadioPlayerView: View {
                     }
                     
                     Button {
-                        withAnimation(.spring()) {
-                            radioManager.playingPressed()
-                        }
+                        radioManager.playingPressed()
                     } label: {
                         Image(radioManager.playingButtonSelected ? "btn-pause" : "btn-play")
                             .resizable()
                             .frame(width: 45, height: 45)
                     }
+                    
                     
                     Button {
                         radioManager.stopPressed()
@@ -94,7 +94,7 @@ struct RadioPlayerView: View {
                 if radioManager.mpVolumSliderValue != nil {
                     HStack {
                         Image(systemName: "speaker.slash.fill")
-                        SliderView(slider: radioManager.mpVolumSliderValue!)
+                        VolumeSliderView(slider: radioManager.mpVolumSliderValue!)
                         Image(systemName: "speaker.wave.3.fill")
                     }
                     .frame(height: 60)
@@ -113,11 +113,19 @@ struct RadioPlayerView: View {
                     }
                 }
                 .multilineTextAlignment(.center)
+                .animation(.easeInOut, value: radioManager.playingButtonSelected)
                 
                 Spacer()
                 
                 HStack {
-                    Text("APP LOGO").bold()
+                    Image("appicon")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 40, height: 40)
+                        .cornerRadius(10)
+                        .onTapGesture {
+                            showAboutView = true
+                        }
                     
                     Spacer()
                     
@@ -152,15 +160,27 @@ struct RadioPlayerView: View {
             }
             .padding()
         }
+        .sheet(isPresented: $showAboutView, content: AboutView.init)
+        .userActivity(Config.radioActivity,
+                      element: radioManager.currentStation,
+                      updateHandoffUserActivity)
         .navigationTitle(radioManager.stationTitle ?? "")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            Button {
-                
-            } label: {
-                Label("Now Playing", image: "NowPlayingBars-3")
-            }
+//        .toolbar {
+//            Button {
+//                
+//            } label: {
+//                Label("Now Playing", image: "NowPlayingBars-3")
+//            }
+//        }
+    }
+    
+    private func updateHandoffUserActivity(station: RadioStation, _ activity: NSUserActivity) {
+        if let dictionary = station.dictionary {
+            activity.addUserInfoEntries(from: dictionary)
         }
+        
+        logUserActivity(activity, label: "activity")
     }
 }
 
@@ -174,16 +194,8 @@ struct RadioPlayerView_Previews: PreviewProvider {
 }
 #endif
 
-
-struct SliderView: UIViewRepresentable {
-    let slider: UISlider
-    
-    func makeUIView(context: Context) -> UISlider {
-        return slider
-    }
-    
-    func updateUIView(_ uiView: UISlider, context: Context) {
-        
-    }
-    
+func logUserActivity(_ activity: NSUserActivity, label: String = "") {
+    print("\(label) TYPE = \(activity.activityType)")
+    print("\(label) INFO = \(activity.userInfo ?? [:])")
 }
+

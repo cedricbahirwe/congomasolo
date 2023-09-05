@@ -7,12 +7,14 @@
 
 import SwiftUI
 
+
 struct StationsView: View {
     @EnvironmentObject
     private var stationsVM: StationsViewModel
     
     @State private var showAboutView = false
-    
+    @State private var selectedStation: RadioStation?
+
     var body: some View {
         NavigationStack {
             List {
@@ -27,53 +29,83 @@ struct StationsView: View {
                     }
                 }
             }
-            .background(.red)
-            .navigationTitle("Congo Masolo")
+            .navigationTitle("Masolo Radio")
             .sheet(isPresented: $showAboutView, content: AboutView.init)
             .navigationDestination(for: RadioStation.self, destination: RadioPlayerView.init)
+            .navigationDestination(forItem: $selectedStation, destination: { station in
+                RadioPlayerView.init(station)
+                
+            })
+            .onContinueUserActivity(Config.radioActivity) { userActivity in
+                if let dictionary = userActivity.userInfo as? [String: Any] {
+                    selectedStation = RadioStation(dictionary: dictionary)
+                }
+                
+                logUserActivity(userActivity, label: "on activity")
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         showAboutView.toggle()
                     } label: {
-                        Image(systemName: "list.bullet")
+                        Image(systemName: "info.circle")
                             .imageScale(.large)
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    
+                    if stationsVM.stationNowPlayingButtonEnabled {
+                        NavigationLink {
+                            RadioPlayerView(stationsVM.currentStation)
+                        } label: {
+                            Image("btn-nowPlaying")
+                                .imageScale(.large)
+                        }
                     }
                 }
             }
             .safeAreaInset(edge: .bottom) {
-                HStack(spacing: 8) {
-                    Image("NowPlayingBars")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 20, height: 20)
+                NavigationLink {
+                    RadioPlayerView(stationsVM.currentStation)
+                } label: {
                     
-                    Text("Sélectionnez une station pour commencer")
-                    Spacer()
+                    HStack(spacing: 8) {
+                        Image("NowPlayingBars")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20, height: 20)
+                        
+                        Text(stationsVM.stationNowPlayingButtonTitle)
+                        Spacer()
+                    }
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.6)
+                    .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .frame(height: 44)
+                    .background(
+                        Color.black
+                            .ignoresSafeArea(edges: .bottom)
+                    )
+                    .containerShape(Rectangle())
                 }
-                .lineLimit(1)
-                .minimumScaleFactor(0.6)
-                .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
-                .frame(maxWidth: .infinity)
-                .padding()
-                .frame(height: 44)
-                .background(
-                    Color.black
-                        .ignoresSafeArea(edges: .bottom)
-                )
+            
             }
             .task {
                 await stationsVM.fetchStations()
-                print(stationsVM.stations[0])
             }
         }
     }
+
 }
 
 struct StationsView_Previews: PreviewProvider {
     static var previews: some View {
         StationsView()
             .environmentObject(StationsViewModel())
+            .preferredColorScheme(.dark)
     }
 }
 
@@ -95,39 +127,51 @@ struct ActivityIndicator: Identifiable {
     }
 }
 
-@MainActor
-final class StationsViewModel: ObservableObject {
-    @Published var stations: [RadioStation] = []
-    
-    @Published var activityIndicator = ActivityIndicator()
-    
-    @Published var errorMessage: String?
-    
-    let manager = StationsManager.shared
-    
-    
-    func fetchStations() async {
-        activityIndicator.start()
-        
-        do {
-            let resultStations = try await manager.fetch()
-            activityIndicator.stop()
-            
-            self.stations = resultStations
-            //            self.delegate?.didFinishLoading(self, stations: stations)
-        } catch {
-            self.activityIndicator.stop()
-            self.handle(error)
-        }
+struct NavigationStackModifier<Item, Destination: View>: ViewModifier {
+    let item: Binding<Item?>
+    let destination: (Item) -> Destination
+
+    func body(content: Content) -> some View {
+        content.background(NavigationLink(isActive: item.mappedToBool()) {
+            if let item = item.wrappedValue {
+                destination(item)
+            } else {
+                EmptyView()
+            }
+        } label: {
+            EmptyView()
+        })
     }
-    
-    private func handle(_ error: Error) {
-        errorMessage = error.localizedDescription
+}
+
+extension View {
+    func navigationDestination<Item, Destination: View>(
+        forItem binding: Binding<Item?>,
+        @ViewBuilder destination: @escaping (Item) -> Destination
+    ) -> some View {
+        self.modifier(NavigationStackModifier(item: binding, destination: destination))
     }
-    
-    func handleRetrial() {
-        Task {
-            await fetchStations()
-        }
+}
+
+extension Binding where Value == Bool {
+    init<Wrapped>(bindingOptional: Binding<Wrapped?>) {
+        self.init(
+            get: {
+                bindingOptional.wrappedValue != nil
+            },
+            set: { newValue in
+                guard newValue == false else { return }
+
+                /// We only handle `false` booleans to set our optional to `nil`
+                /// as we can't handle `true` for restoring the previous value.
+                bindingOptional.wrappedValue = nil
+            }
+        )
+    }
+}
+
+extension Binding {
+    func mappedToBool<Wrapped>() -> Binding<Bool> where Value == Wrapped? {
+        return Binding<Bool>(bindingOptional: self)
     }
 }

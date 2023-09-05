@@ -16,9 +16,7 @@ struct RadionInfoView: View {
 
     var body: some View {
         ZStack {
-            Image("background")
-                .resizable()
-                .ignoresSafeArea()
+            BlurredBackground()
             
             VStack(alignment: .leading) {
                 HStack(spacing: 8) {
@@ -40,33 +38,45 @@ struct RadionInfoView: View {
                         
                         Text(station.name)
                             .font(.subheadline)
-//                            .scrol
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text(station.longDesc)
-                    .padding(.top)
+                Group {
+                    if station.longDesc.isEmpty {
+                        Text("Vous écoutez Congo Masolo. Parlez-en à vos amis,!!!")
+                    } else {
+                        Text(station.longDesc)
+                    }
+                }
+                .padding(.top)
                 
                 Spacer()
-                Button {
+                
+                OkayButton {
                     dismiss()
-                } label: {
-                    Text("Okay")
-                        .padding()
-                        .frame(height: 48)
-                        .frame(maxWidth: .infinity)
-                        .background(Color(red: 51/255, green: 51/255, blue: 53/255))
-                        .cornerRadius(15)
-                        .shadow(color: .white.opacity(0.2), radius: 0.1, x: 0, y: 1)
                 }
-
             }
             .padding()
             .foregroundColor(.white)
         }
         .task {
             self.image = Image(uiImage: await station.getImage())
+        }
+    }
+}
+
+struct OkayButton: View {
+    let action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            Text("Okay")
+                .padding()
+                .frame(height: 48)
+                .frame(maxWidth: .infinity)
+                .background(Color(red: 51/255, green: 51/255, blue: 53/255))
+                .cornerRadius(15)
+                .shadow(color: .white.opacity(0.2), radius: 0.1, x: 0, y: 1)
         }
     }
 }
@@ -78,3 +88,4 @@ struct RadionInfoView_Previews: PreviewProvider {
     }
 }
 #endif
+

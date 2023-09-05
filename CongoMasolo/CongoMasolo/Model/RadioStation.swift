@@ -52,3 +52,18 @@ extension RadioStation {
         FRadioPlayer.shared.currentMetadata?.artistName ?? desc
     }
 }
+
+extension RadioStation {
+    init?(dictionary: [String: Any]) {
+        guard let data = try? JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted) else { return nil }
+        guard let decodedSelf = try? JSONDecoder().decode(Self.self, from: data) else { return nil }
+        self = decodedSelf
+    }
+}
+
+extension RadioStation {
+    var dictionary: [String: Any]? {
+        guard let data = try? JSONEncoder().encode(self) else { return nil }
+        return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: Any] }
+    }
+}

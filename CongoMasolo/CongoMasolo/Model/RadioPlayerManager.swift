@@ -29,7 +29,7 @@ import Combine
     @Published var previousButtonHidden = false
     @Published var nextButtonHidden = false
     
-    init(_ station: RadioStation) {
+    init(_ station: RadioStation?) {
         self.isNewStation = isNewStation
         
         isNewStation = station != manager.currentStation

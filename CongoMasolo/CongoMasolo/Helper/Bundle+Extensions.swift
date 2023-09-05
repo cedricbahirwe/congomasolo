@@ -13,4 +13,12 @@ extension Bundle {
         object(forInfoDictionaryKey: "CFBundleName") as? String ??
         ""
     }
+    
+    var appVersion: String? {
+        object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+    }
+    
+    var buildVersion: String? {
+        object(forInfoDictionaryKey: "CFBundleVersion") as? String
+    }
 }

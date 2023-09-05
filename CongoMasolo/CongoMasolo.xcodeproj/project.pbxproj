@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB8212712AA7C8E4001B7A85 /* VolumeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8212702AA7C8E4001B7A85 /* VolumeSliderView.swift */; };
+		CB8FABC02AA7AAED00AD1AE9 /* StationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8FABBF2AA7AAED00AD1AE9 /* StationsViewModel.swift */; };
 		CB95D08E2AA6545D00B56740 /* CongoMasoloApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D08D2AA6545D00B56740 /* CongoMasoloApp.swift */; };
 		CB95D0902AA6545D00B56740 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D08F2AA6545D00B56740 /* ContentView.swift */; };
 		CB95D0922AA6546000B56740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB95D0912AA6546000B56740 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		CB95D0FC2AA7653400B56740 /* RadioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0FB2AA7653400B56740 /* RadioPlayerManager.swift */; };
 		CB95D0FE2AA76E8B00B56740 /* AirPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0FD2AA76E8B00B56740 /* AirPlayButton.swift */; };
 		CB95D1002AA78EE400B56740 /* RadionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0FF2AA78EE400B56740 /* RadionInfoView.swift */; };
+		CB95D1022AA7A23500B56740 /* BlurredBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D1012AA7A23500B56740 /* BlurredBackground.swift */; };
+		CB95D1042AA7A24A00B56740 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D1032AA7A24A00B56740 /* MailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB8212702AA7C8E4001B7A85 /* VolumeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSliderView.swift; sourceTree = "<group>"; };
+		CB8FABBF2AA7AAED00AD1AE9 /* StationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsViewModel.swift; sourceTree = "<group>"; };
 		CB95D08A2AA6545D00B56740 /* CongoMasolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CongoMasolo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB95D08D2AA6545D00B56740 /* CongoMasoloApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongoMasoloApp.swift; sourceTree = "<group>"; };
 		CB95D08F2AA6545D00B56740 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +103,8 @@
 		CB95D0FB2AA7653400B56740 /* RadioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerManager.swift; sourceTree = "<group>"; };
 		CB95D0FD2AA76E8B00B56740 /* AirPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayButton.swift; sourceTree = "<group>"; };
 		CB95D0FF2AA78EE400B56740 /* RadionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadionInfoView.swift; sourceTree = "<group>"; };
+		CB95D1012AA7A23500B56740 /* BlurredBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredBackground.swift; sourceTree = "<group>"; };
+		CB95D1032AA7A24A00B56740 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +132,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB8FABBE2AA7AAE700AD1AE9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB8FABBF2AA7AAED00AD1AE9 /* StationsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CB95D0812AA6545D00B56740 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +166,7 @@
 				CB95D0BC2AA713C600B56740 /* Info.plist */,
 				CB95D0C02AA7156B00B56740 /* App */,
 				CB95D08F2AA6545D00B56740 /* ContentView.swift */,
+				CB8FABBE2AA7AAE700AD1AE9 /* ViewModel */,
 				CB95D0ED2AA72D8000B56740 /* Data */,
 				CB95D0EA2AA72B9600B56740 /* Views */,
 				CB95D0CE2AA7220600B56740 /* FMRadioPlayer */,
@@ -266,7 +283,10 @@
 				CB95D0F72AA73F2300B56740 /* RadioPlayerView.swift */,
 				CB95D0FD2AA76E8B00B56740 /* AirPlayButton.swift */,
 				CB95D0F02AA734A900B56740 /* AboutView.swift */,
+				CB95D1032AA7A24A00B56740 /* MailView.swift */,
+				CB95D1012AA7A23500B56740 /* BlurredBackground.swift */,
 				CB95D0FF2AA78EE400B56740 /* RadionInfoView.swift */,
+				CB8212702AA7C8E4001B7A85 /* VolumeSliderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,6 +444,8 @@
 			files = (
 				CB95D0902AA6545D00B56740 /* ContentView.swift in Sources */,
 				CB95D0F12AA734A900B56740 /* AboutView.swift in Sources */,
+				CB95D1022AA7A23500B56740 /* BlurredBackground.swift in Sources */,
+				CB8FABC02AA7AAED00AD1AE9 /* StationsViewModel.swift in Sources */,
 				CB95D0FE2AA76E8B00B56740 /* AirPlayButton.swift in Sources */,
 				CB95D0C72AA7161400B56740 /* RadioStation.swift in Sources */,
 				CB95D0DE2AA7221500B56740 /* FRadioMetadataExtractor.swift in Sources */,
@@ -438,8 +460,10 @@
 				CB95D0C22AA7157200B56740 /* AppDelegate.swift in Sources */,
 				CB95D0C92AA716CD00B56740 /* UIImage+Cache.swift in Sources */,
 				CB95D0BB2AA713AE00B56740 /* Bundle+Extensions.swift in Sources */,
+				CB8212712AA7C8E4001B7A85 /* VolumeSliderView.swift in Sources */,
 				CB95D0FA2AA73F5B00B56740 /* RadionStations+Preview.swift in Sources */,
 				CB95D0E22AA7221500B56740 /* FRadioArtworkAPI.swift in Sources */,
+				CB95D1042AA7A24A00B56740 /* MailView.swift in Sources */,
 				CB95D0FC2AA7653400B56740 /* RadioPlayerManager.swift in Sources */,
 				CB95D0E02AA7221500B56740 /* FRadioArtworkAPI+iTunes.swift in Sources */,
 				CB95D0F82AA73F2300B56740 /* RadioPlayerView.swift in Sources */,
@@ -611,6 +635,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CongoMasolo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Masolo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app would like to save the image associated with the current track and station to your photo library.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -641,6 +668,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CongoMasolo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Masolo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app would like to save the image associated with the current track and station to your photo library.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

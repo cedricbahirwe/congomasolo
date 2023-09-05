@@ -15,7 +15,7 @@ struct Config {
     // If this is set to "true", it will use the JSON file in the app
     // Set it to "false" to use the JSON file at the stationDataURL
     static let useLocalStations = true
-    static let stationsURL = "https://fethica.com/assets/swift-radio/stations.json"
+    static let stationsURL = "https://cedricbahirwe.github.io/html/radio/stations.json"
 
     // Set this to "true" to enable the search bar
     static let searchable = false
@@ -24,8 +24,13 @@ struct Config {
     static let hideNextPreviousButtons = true
     
     // Contact infos
-    static let website = "https://github.com/analogcode/Swift-Radio-Pro"
-    static let email = "contact@fethica.com"
+    static let email = "abc.incs.001@gmail.com"
+    static let linkedIn =  "https://www.linkedin.com/in/cedricbahirwe"
     static let emailSubject = "From \(Bundle.main.appName) App"
+    
+    static let aristoteInsta = "https://www.instagram.com/aristote_aml"
+    static let stationRequest = "https://forms.gle/cFYhU5qRTFxHcRRT6"
+    
+    static let radioActivity = "com.abc.incs.cedricbahirwe.CongoMasolo.openRadio"
 }
 
