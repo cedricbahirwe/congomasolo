@@ -14,6 +14,8 @@
 		CB95D09F2AA6546000B56740 /* CongoMasoloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D09E2AA6546000B56740 /* CongoMasoloTests.swift */; };
 		CB95D0A92AA6546000B56740 /* CongoMasoloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0A82AA6546000B56740 /* CongoMasoloUITests.swift */; };
 		CB95D0AB2AA6546000B56740 /* CongoMasoloUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0AA2AA6546000B56740 /* CongoMasoloUITestsLaunchTests.swift */; };
+		CB95D0B82AA7137700B56740 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0B72AA7137700B56740 /* Config.swift */; };
+		CB95D0BB2AA713AE00B56740 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0BA2AA713AE00B56740 /* Bundle+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,9 @@
 		CB95D0A42AA6546000B56740 /* CongoMasoloUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CongoMasoloUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB95D0A82AA6546000B56740 /* CongoMasoloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongoMasoloUITests.swift; sourceTree = "<group>"; };
 		CB95D0AA2AA6546000B56740 /* CongoMasoloUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongoMasoloUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CB95D0B72AA7137700B56740 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		CB95D0BA2AA713AE00B56740 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		CB95D0BC2AA713C600B56740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +99,11 @@
 		CB95D08C2AA6545D00B56740 /* CongoMasolo */ = {
 			isa = PBXGroup;
 			children = (
+				CB95D0BC2AA713C600B56740 /* Info.plist */,
 				CB95D08D2AA6545D00B56740 /* CongoMasoloApp.swift */,
 				CB95D08F2AA6545D00B56740 /* ContentView.swift */,
+				CB95D0B72AA7137700B56740 /* Config.swift */,
+				CB95D0B92AA7139800B56740 /* Helper */,
 				CB95D0912AA6546000B56740 /* Assets.xcassets */,
 				CB95D0932AA6546000B56740 /* Preview Content */,
 			);
@@ -125,6 +133,14 @@
 				CB95D0AA2AA6546000B56740 /* CongoMasoloUITestsLaunchTests.swift */,
 			);
 			path = CongoMasoloUITests;
+			sourceTree = "<group>";
+		};
+		CB95D0B92AA7139800B56740 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CB95D0BA2AA713AE00B56740 /* Bundle+Extensions.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +275,8 @@
 			files = (
 				CB95D0902AA6545D00B56740 /* ContentView.swift in Sources */,
 				CB95D08E2AA6545D00B56740 /* CongoMasoloApp.swift in Sources */,
+				CB95D0B82AA7137700B56740 /* Config.swift in Sources */,
+				CB95D0BB2AA713AE00B56740 /* Bundle+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +438,7 @@
 				DEVELOPMENT_TEAM = 6V9B6LUW22;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CongoMasolo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +468,7 @@
 				DEVELOPMENT_TEAM = 6V9B6LUW22;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CongoMasolo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
