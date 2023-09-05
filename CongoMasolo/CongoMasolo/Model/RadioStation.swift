@@ -6,9 +6,8 @@
 //
 
 import UIKit
-//import FRadioPlayer
 
-struct RadioStation: Identifiable, Equatable, Codable {
+struct RadioStation: Identifiable, Hashable, Codable {
     var id: String { streamURL }
     var name: String
     var streamURL: String

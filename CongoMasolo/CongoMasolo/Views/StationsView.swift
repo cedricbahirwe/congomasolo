@@ -22,14 +22,15 @@ struct StationsView: View {
                         .foregroundColor(.red)
                 }
                 ForEach(stationsVM.stations) { station in
-                    Text(station.name)
+                    NavigationLink(value: station) {
+                        StationRow(station: station)
+                    }
                 }
             }
             .background(.red)
             .navigationTitle("Congo Radio")
-            .sheet(isPresented: $showAboutView) {
-                AboutView()
-            }
+            .sheet(isPresented: $showAboutView, content: AboutView.init)
+            .navigationDestination(for: RadioStation.self, destination: RadioPlayerView.init)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -40,8 +41,30 @@ struct StationsView: View {
                     }
                 }
             }
+            .safeAreaInset(edge: .bottom) {
+                HStack(spacing: 8) {
+                    Image("NowPlayingBars")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 20, height: 20)
+                    
+                    Text("Sélectionnez une station pour commencer")
+                    Spacer()
+                }
+                .lineLimit(1)
+                .minimumScaleFactor(0.6)
+                .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
+                .frame(maxWidth: .infinity)
+                .padding()
+                .frame(height: 44)
+                .background(
+                    Color.black
+                        .ignoresSafeArea(edges: .bottom)
+                )
+            }
             .task {
                 await stationsVM.fetchStations()
+                print(stationsVM.stations[0])
             }
         }
     }

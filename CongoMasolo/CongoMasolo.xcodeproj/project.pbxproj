@@ -34,6 +34,9 @@
 		CB95D0EC2AA72BA300B56740 /* StationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0EB2AA72BA300B56740 /* StationsView.swift */; };
 		CB95D0EF2AA72D8900B56740 /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = CB95D0EE2AA72D8900B56740 /* stations.json */; };
 		CB95D0F12AA734A900B56740 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0F02AA734A900B56740 /* AboutView.swift */; };
+		CB95D0F62AA73A1C00B56740 /* StationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0F52AA73A1C00B56740 /* StationRow.swift */; };
+		CB95D0F82AA73F2300B56740 /* RadioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0F72AA73F2300B56740 /* RadioPlayerView.swift */; };
+		CB95D0FA2AA73F5B00B56740 /* RadionStations+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0F92AA73F5B00B56740 /* RadionStations+Preview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		CB95D0EB2AA72BA300B56740 /* StationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsView.swift; sourceTree = "<group>"; };
 		CB95D0EE2AA72D8900B56740 /* stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
 		CB95D0F02AA734A900B56740 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		CB95D0F52AA73A1C00B56740 /* StationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationRow.swift; sourceTree = "<group>"; };
+		CB95D0F72AA73F2300B56740 /* RadioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerView.swift; sourceTree = "<group>"; };
+		CB95D0F92AA73F5B00B56740 /* RadionStations+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RadionStations+Preview.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				CB95D0942AA6546000B56740 /* Preview Assets.xcassets */,
+				CB95D0F92AA73F5B00B56740 /* RadionStations+Preview.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -247,7 +254,9 @@
 		CB95D0EA2AA72B9600B56740 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB95D0F22AA739FD00B56740 /* Rows */,
 				CB95D0EB2AA72BA300B56740 /* StationsView.swift */,
+				CB95D0F72AA73F2300B56740 /* RadioPlayerView.swift */,
 				CB95D0F02AA734A900B56740 /* AboutView.swift */,
 			);
 			path = Views;
@@ -259,6 +268,14 @@
 				CB95D0EE2AA72D8900B56740 /* stations.json */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		CB95D0F22AA739FD00B56740 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				CB95D0F52AA73A1C00B56740 /* StationRow.swift */,
+			);
+			path = Rows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,11 +423,14 @@
 				CB95D0DC2AA7221500B56740 /* FRadioPlayer+Metadata.swift in Sources */,
 				CB95D0E42AA7221500B56740 /* FRadioPlayer+State.swift in Sources */,
 				CB95D0B82AA7137700B56740 /* Config.swift in Sources */,
+				CB95D0F62AA73A1C00B56740 /* StationRow.swift in Sources */,
 				CB95D0C22AA7157200B56740 /* AppDelegate.swift in Sources */,
 				CB95D0C92AA716CD00B56740 /* UIImage+Cache.swift in Sources */,
 				CB95D0BB2AA713AE00B56740 /* Bundle+Extensions.swift in Sources */,
+				CB95D0FA2AA73F5B00B56740 /* RadionStations+Preview.swift in Sources */,
 				CB95D0E22AA7221500B56740 /* FRadioArtworkAPI.swift in Sources */,
 				CB95D0E02AA7221500B56740 /* FRadioArtworkAPI+iTunes.swift in Sources */,
+				CB95D0F82AA73F2300B56740 /* RadioPlayerView.swift in Sources */,
 				CB95D0E92AA722F700B56740 /* DataManager.swift in Sources */,
 				CB95D0DB2AA7221500B56740 /* FRadioPlayer+PlaybackState.swift in Sources */,
 				CB95D0E12AA7221500B56740 /* FRadioPlayerObserver.swift in Sources */,
