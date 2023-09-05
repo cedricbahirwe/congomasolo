@@ -8,8 +8,8 @@
 import SwiftUI
 
 class RadioPlayerManager: ObservableObject {
-    @Published var station: RadioStation
-    @Published var isNewStation: Bool
+//    @Published var station: RadioStation
+    @Published var isNewStation: Bool = false
     
     var currentStation: RadioStation? {
         manager.currentStation
@@ -19,16 +19,23 @@ class RadioPlayerManager: ObservableObject {
     @Published var stationDesc: String?
     @Published var stationDescIsHidden: Bool = true
     
+    
+    
     @Published var songLabel: String?
     @Published var artistLabel: String?
     
     private let player = FRadioPlayer.shared
     private let manager = StationsManager.shared
     
-    init(_ station: RadioStation, _ isNewStation: Bool = false) {
-        self.station = station
+    init(_ station: RadioStation) {
         self.isNewStation = isNewStation
         
+        isNewStation = station != manager.currentStation
+        if isNewStation {
+            manager.set(station: station)
+        }
+        
+        performSetup()
     }
     
     func performSetup() {
@@ -37,7 +44,7 @@ class RadioPlayerManager: ObservableObject {
             stationDidChange()
         } else {
             updateTrackArtwork()
-            playerStateDidChange(player.state, animate: false)
+            //            playerStateDidChange(player.state, animate: false)
         }
     }
     
@@ -70,11 +77,11 @@ class RadioPlayerManager: ObservableObject {
         songLabel = statusMessage
         artistLabel = manager.currentStation?.name
         
-//        if animate {
-//            songLabel.animation = "flash"
-//            songLabel.repeatCount = 2
-//            songLabel.animate()
-//        }
+        //        if animate {
+        //            songLabel.animation = "flash"
+        //            songLabel.repeatCount = 2
+        //            songLabel.animate()
+        //        }
     }
     
     // Update track with new artwork
@@ -83,22 +90,22 @@ class RadioPlayerManager: ObservableObject {
             Task {
                 self.albumImage = await manager.currentStation?.getImage()
             }
-//            manager.currentStation?.getImage { [weak self] image in
-//                self?.albumImageView.image = image
-//                self?.stationDescLabel.isHidden = false
-//            }
+            //            manager.currentStation?.getImage { [weak self] image in
+            //                self?.albumImageView.image = image
+            //                self?.stationDescLabel.isHidden = false
+            //            }
             return
         }
         
-//        albumImageView.load(url: artworkURL) { [weak self] in
-//            self?.albumImageView.animation = "wobble"
-//            self?.albumImageView.duration = 2
-//            self?.albumImageView.animate()
-//            self?.stationDescLabel.isHidden = true
-//            
-//            // Force app to update display
-//            self?.view.setNeedsDisplay()
-//        }
+        //        albumImageView.load(url: artworkURL) { [weak self] in
+        //            self?.albumImageView.animation = "wobble"
+        //            self?.albumImageView.duration = 2
+        //            self?.albumImageView.animate()
+        //            self?.stationDescLabel.isHidden = true
+        //
+        //            // Force app to update display
+        //            self?.view.setNeedsDisplay()
+        //        }
     }
     
     
@@ -107,16 +114,12 @@ class RadioPlayerManager: ObservableObject {
 struct RadioPlayerView: View {
     @StateObject private var radioManager: RadioPlayerManager
     
-    init(_ station: RadioStation, isNewStation: Bool) {
-        self._radioManager = StateObject(wrappedValue: RadioPlayerManager(station, isNewStation))
+    init(_ station: RadioStation) {
+        self._radioManager = StateObject(wrappedValue: RadioPlayerManager(station))
     }
     
     @State private var image: Image?
     @State private var volume = 0.5
-    
-    var isNewStation: Bool {
-        radioManager.isNewStation
-    }
 
     var body: some View {
         ZStack {
@@ -254,10 +257,12 @@ struct RadioPlayerView: View {
             }
             .padding()
         }
-        .navigationTitle(manager.currentStation?.name ?? "")
+        .navigationTitle(radioManager.currentStation?.name ?? "")
         .preferredColorScheme(.dark)
         .task {
-            self.image = Image(uiImage: await station.getImage())
+            if let uiImage = await radioManager.currentStation?.getImage() {
+                self.image = Image(uiImage: uiImage)
+            }
         }
     }
 }
