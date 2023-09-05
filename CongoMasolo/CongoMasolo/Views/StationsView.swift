@@ -39,9 +39,7 @@ struct StationsView: View {
             .onContinueUserActivity(Config.radioActivity) { userActivity in
                 if let dictionary = userActivity.userInfo as? [String: Any] {
                     selectedStation = RadioStation(dictionary: dictionary)
-                }
-                
-                logUserActivity(userActivity, label: "on activity")
+                }                
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -91,6 +89,7 @@ struct StationsView: View {
                     )
                     .containerShape(Rectangle())
                 }
+                .disabled(stationsVM.currentStation==nil)
             
             }
             .task {

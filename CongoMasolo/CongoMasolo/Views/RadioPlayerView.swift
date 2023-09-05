@@ -179,8 +179,6 @@ struct RadioPlayerView: View {
         if let dictionary = station.dictionary {
             activity.addUserInfoEntries(from: dictionary)
         }
-        
-        logUserActivity(activity, label: "activity")
     }
 }
 
@@ -193,9 +191,3 @@ struct RadioPlayerView_Previews: PreviewProvider {
     }
 }
 #endif
-
-func logUserActivity(_ activity: NSUserActivity, label: String = "") {
-    print("\(label) TYPE = \(activity.activityType)")
-    print("\(label) INFO = \(activity.userInfo ?? [:])")
-}
-
