@@ -25,35 +25,24 @@ import Combine
     
     @Published var songLabel: String?
     @Published var artistLabel: String?
+    @Published var stationTitle: String?
+    @Published var previousButtonHidden = false
+    @Published var nextButtonHidden = false
     
-    var cancels = Set<AnyCancellable>()
-    let colorView = UIView()
-
     init(_ station: RadioStation) {
         self.isNewStation = isNewStation
         
         isNewStation = station != manager.currentStation
+        
         if isNewStation {
             manager.set(station: station)
         }
-        
-        
-        $mpVolumSliderValue.compactMap(\.?.value)
-            .sink { print("res", $0) }
-            .store(in: &cancels)
-        
-        colorView.backgroundColor = .red
-
     
         performSetup()
 
     }
     
-    @Published var stationTitle: String?
-    @Published var previousButtonHidden = false
-    @Published var nextButtonHidden = false
-    
-    @Published var mpVolumSliderValue: UISlider?// = 0.0 {
+    @Published var mpVolumSliderValue: UISlider?
     
     
     func performSetup() {
@@ -248,8 +237,8 @@ import Combine
     }
     
     func infoButtonPressed() {
-//        guard let station = manager.currentStation else { return }
-        //       delegate?.didTapInfoButton(self, station: station)
+        guard let station = manager.currentStation else { return }
+        goToInfoView = true
     }
     
     
@@ -259,8 +248,10 @@ import Combine
     }
     
     func handleCompanyButton() {
-        //        delegate?.didTapCompanyButton(self)
+        //        delegate?.O(self)
     }
+    
+    @Published var goToInfoView = false
     
 }
 

@@ -39,6 +39,7 @@
 		CB95D0FA2AA73F5B00B56740 /* RadionStations+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0F92AA73F5B00B56740 /* RadionStations+Preview.swift */; };
 		CB95D0FC2AA7653400B56740 /* RadioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0FB2AA7653400B56740 /* RadioPlayerManager.swift */; };
 		CB95D0FE2AA76E8B00B56740 /* AirPlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0FD2AA76E8B00B56740 /* AirPlayButton.swift */; };
+		CB95D1002AA78EE400B56740 /* RadionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0FF2AA78EE400B56740 /* RadionInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		CB95D0F92AA73F5B00B56740 /* RadionStations+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RadionStations+Preview.swift"; sourceTree = "<group>"; };
 		CB95D0FB2AA7653400B56740 /* RadioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerManager.swift; sourceTree = "<group>"; };
 		CB95D0FD2AA76E8B00B56740 /* AirPlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayButton.swift; sourceTree = "<group>"; };
+		CB95D0FF2AA78EE400B56740 /* RadionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadionInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 				CB95D0F72AA73F2300B56740 /* RadioPlayerView.swift */,
 				CB95D0FD2AA76E8B00B56740 /* AirPlayButton.swift */,
 				CB95D0F02AA734A900B56740 /* AboutView.swift */,
+				CB95D0FF2AA78EE400B56740 /* RadionInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				CB95D0C72AA7161400B56740 /* RadioStation.swift in Sources */,
 				CB95D0DE2AA7221500B56740 /* FRadioMetadataExtractor.swift in Sources */,
 				CB95D08E2AA6545D00B56740 /* CongoMasoloApp.swift in Sources */,
+				CB95D1002AA78EE400B56740 /* RadionInfoView.swift in Sources */,
 				CB95D0E32AA7221500B56740 /* FRadioPlayer.swift in Sources */,
 				CB95D0C52AA715F400B56740 /* StationsManager.swift in Sources */,
 				CB95D0DC2AA7221500B56740 /* FRadioPlayer+Metadata.swift in Sources */,

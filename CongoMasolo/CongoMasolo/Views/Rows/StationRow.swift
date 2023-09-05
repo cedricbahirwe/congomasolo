@@ -11,7 +11,6 @@ struct StationRow: View {
     let station: RadioStation
     @State private var image: Image?
     
-    
     var body: some View {
         HStack {
             (image ?? Image("stationImage"))

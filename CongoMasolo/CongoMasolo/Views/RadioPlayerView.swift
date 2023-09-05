@@ -38,8 +38,9 @@ struct RadioPlayerView: View {
                     .cornerRadius(20)
                     .shadow(color: .black, radius: 2, x: 0, y: 1)
                     .overlay(alignment: .bottom) {
-                        if let description = radioManager.currentStation?.desc {
-                            Text(description)
+                        if radioManager.stationDescHidden == false,
+                           let stationDesc = radioManager.stationDesc  {
+                            Text(stationDesc)
                                 .frame(height: 21)
                                 .opacity(0.8)
                         }
@@ -59,7 +60,9 @@ struct RadioPlayerView: View {
                     }
                     
                     Button {
-                        radioManager.playingPressed()
+                        withAnimation(.spring()) {
+                            radioManager.playingPressed()
+                        }
                     } label: {
                         Image(radioManager.playingButtonSelected ? "btn-pause" : "btn-play")
                             .resizable()
@@ -98,7 +101,6 @@ struct RadioPlayerView: View {
                     .padding(.vertical)
                 }
                 
-                
                 VStack(spacing: 8) {
                     if let songLabel = radioManager.songLabel {
                         Text(songLabel)
@@ -132,22 +134,26 @@ struct RadioPlayerView: View {
                                 .imageScale(.large)
                         }
                         
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "info.circle")
-                                .imageScale(.large)
+                        if let station = radioManager.currentStation {
+                            Button {
+                                
+                            } label: {
+                                NavigationLink {
+                                    RadionInfoView(station: station)
+                                } label: {
+                                    Image(systemName: "info.circle")
+                                        .imageScale(.large)
+                                }
+                            }
                         }
                         
                     }
-                    .tint(.primary)
                 }
             }
             .padding()
         }
-        .navigationTitle(radioManager.currentStation?.name ?? "")
+        .navigationTitle(radioManager.stationTitle ?? "")
         .navigationBarTitleDisplayMode(.inline)
-        .preferredColorScheme(.dark)
         .toolbar {
             Button {
                 
