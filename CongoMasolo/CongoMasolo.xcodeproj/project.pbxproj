@@ -16,6 +16,21 @@
 		CB95D0AB2AA6546000B56740 /* CongoMasoloUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0AA2AA6546000B56740 /* CongoMasoloUITestsLaunchTests.swift */; };
 		CB95D0B82AA7137700B56740 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0B72AA7137700B56740 /* Config.swift */; };
 		CB95D0BB2AA713AE00B56740 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0BA2AA713AE00B56740 /* Bundle+Extensions.swift */; };
+		CB95D0C22AA7157200B56740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0C12AA7157200B56740 /* AppDelegate.swift */; };
+		CB95D0C52AA715F400B56740 /* StationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0C42AA715F400B56740 /* StationsManager.swift */; };
+		CB95D0C72AA7161400B56740 /* RadioStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0C62AA7161400B56740 /* RadioStation.swift */; };
+		CB95D0C92AA716CD00B56740 /* UIImage+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0C82AA716CD00B56740 /* UIImage+Cache.swift */; };
+		CB95D0DB2AA7221500B56740 /* FRadioPlayer+PlaybackState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0D12AA7221500B56740 /* FRadioPlayer+PlaybackState.swift */; };
+		CB95D0DC2AA7221500B56740 /* FRadioPlayer+Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0D22AA7221500B56740 /* FRadioPlayer+Metadata.swift */; };
+		CB95D0DD2AA7221500B56740 /* FRadioPlayer+Observation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0D32AA7221500B56740 /* FRadioPlayer+Observation.swift */; };
+		CB95D0DE2AA7221500B56740 /* FRadioMetadataExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0D42AA7221500B56740 /* FRadioMetadataExtractor.swift */; };
+		CB95D0DF2AA7221500B56740 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0D52AA7221500B56740 /* Reachability.swift */; };
+		CB95D0E02AA7221500B56740 /* FRadioArtworkAPI+iTunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0D62AA7221500B56740 /* FRadioArtworkAPI+iTunes.swift */; };
+		CB95D0E12AA7221500B56740 /* FRadioPlayerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0D72AA7221500B56740 /* FRadioPlayerObserver.swift */; };
+		CB95D0E22AA7221500B56740 /* FRadioArtworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0D82AA7221500B56740 /* FRadioArtworkAPI.swift */; };
+		CB95D0E32AA7221500B56740 /* FRadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0D92AA7221500B56740 /* FRadioPlayer.swift */; };
+		CB95D0E42AA7221500B56740 /* FRadioPlayer+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0DA2AA7221500B56740 /* FRadioPlayer+State.swift */; };
+		CB95D0E92AA722F700B56740 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0E82AA722F700B56740 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +64,21 @@
 		CB95D0B72AA7137700B56740 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		CB95D0BA2AA713AE00B56740 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		CB95D0BC2AA713C600B56740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CB95D0C12AA7157200B56740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CB95D0C42AA715F400B56740 /* StationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsManager.swift; sourceTree = "<group>"; };
+		CB95D0C62AA7161400B56740 /* RadioStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStation.swift; sourceTree = "<group>"; };
+		CB95D0C82AA716CD00B56740 /* UIImage+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Cache.swift"; sourceTree = "<group>"; };
+		CB95D0D12AA7221500B56740 /* FRadioPlayer+PlaybackState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FRadioPlayer+PlaybackState.swift"; sourceTree = "<group>"; };
+		CB95D0D22AA7221500B56740 /* FRadioPlayer+Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FRadioPlayer+Metadata.swift"; sourceTree = "<group>"; };
+		CB95D0D32AA7221500B56740 /* FRadioPlayer+Observation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FRadioPlayer+Observation.swift"; sourceTree = "<group>"; };
+		CB95D0D42AA7221500B56740 /* FRadioMetadataExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioMetadataExtractor.swift; sourceTree = "<group>"; };
+		CB95D0D52AA7221500B56740 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		CB95D0D62AA7221500B56740 /* FRadioArtworkAPI+iTunes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FRadioArtworkAPI+iTunes.swift"; sourceTree = "<group>"; };
+		CB95D0D72AA7221500B56740 /* FRadioPlayerObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioPlayerObserver.swift; sourceTree = "<group>"; };
+		CB95D0D82AA7221500B56740 /* FRadioArtworkAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioArtworkAPI.swift; sourceTree = "<group>"; };
+		CB95D0D92AA7221500B56740 /* FRadioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioPlayer.swift; sourceTree = "<group>"; };
+		CB95D0DA2AA7221500B56740 /* FRadioPlayer+State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FRadioPlayer+State.swift"; sourceTree = "<group>"; };
+		CB95D0E82AA722F700B56740 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +130,12 @@
 			isa = PBXGroup;
 			children = (
 				CB95D0BC2AA713C600B56740 /* Info.plist */,
-				CB95D08D2AA6545D00B56740 /* CongoMasoloApp.swift */,
+				CB95D0C02AA7156B00B56740 /* App */,
 				CB95D08F2AA6545D00B56740 /* ContentView.swift */,
+				CB95D0CE2AA7220600B56740 /* FMRadioPlayer */,
+				CB95D0C32AA715E200B56740 /* Model */,
 				CB95D0B72AA7137700B56740 /* Config.swift */,
+				CB95D0E52AA722E000B56740 /* Networking */,
 				CB95D0B92AA7139800B56740 /* Helper */,
 				CB95D0912AA6546000B56740 /* Assets.xcassets */,
 				CB95D0932AA6546000B56740 /* Preview Content */,
@@ -139,8 +172,68 @@
 			isa = PBXGroup;
 			children = (
 				CB95D0BA2AA713AE00B56740 /* Bundle+Extensions.swift */,
+				CB95D0C82AA716CD00B56740 /* UIImage+Cache.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		CB95D0C02AA7156B00B56740 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CB95D08D2AA6545D00B56740 /* CongoMasoloApp.swift */,
+				CB95D0C12AA7157200B56740 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CB95D0C32AA715E200B56740 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB95D0C42AA715F400B56740 /* StationsManager.swift */,
+				CB95D0C62AA7161400B56740 /* RadioStation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB95D0CE2AA7220600B56740 /* FMRadioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				CB95D0CF2AA7221500B56740 /* Sources */,
+			);
+			path = FMRadioPlayer;
+			sourceTree = "<group>";
+		};
+		CB95D0CF2AA7221500B56740 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CB95D0D02AA7221500B56740 /* FRadioPlayer */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CB95D0D02AA7221500B56740 /* FRadioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				CB95D0D12AA7221500B56740 /* FRadioPlayer+PlaybackState.swift */,
+				CB95D0D22AA7221500B56740 /* FRadioPlayer+Metadata.swift */,
+				CB95D0D32AA7221500B56740 /* FRadioPlayer+Observation.swift */,
+				CB95D0D42AA7221500B56740 /* FRadioMetadataExtractor.swift */,
+				CB95D0D52AA7221500B56740 /* Reachability.swift */,
+				CB95D0D62AA7221500B56740 /* FRadioArtworkAPI+iTunes.swift */,
+				CB95D0D72AA7221500B56740 /* FRadioPlayerObserver.swift */,
+				CB95D0D82AA7221500B56740 /* FRadioArtworkAPI.swift */,
+				CB95D0D92AA7221500B56740 /* FRadioPlayer.swift */,
+				CB95D0DA2AA7221500B56740 /* FRadioPlayer+State.swift */,
+			);
+			path = FRadioPlayer;
+			sourceTree = "<group>";
+		};
+		CB95D0E52AA722E000B56740 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CB95D0E82AA722F700B56740 /* DataManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +252,8 @@
 			dependencies = (
 			);
 			name = CongoMasolo;
+			packageProductDependencies = (
+			);
 			productName = CongoMasolo;
 			productReference = CB95D08A2AA6545D00B56740 /* CongoMasolo.app */;
 			productType = "com.apple.product-type.application";
@@ -231,6 +326,8 @@
 				Base,
 			);
 			mainGroup = CB95D0812AA6545D00B56740;
+			packageReferences = (
+			);
 			productRefGroup = CB95D08B2AA6545D00B56740 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -274,9 +371,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB95D0902AA6545D00B56740 /* ContentView.swift in Sources */,
+				CB95D0C72AA7161400B56740 /* RadioStation.swift in Sources */,
+				CB95D0DE2AA7221500B56740 /* FRadioMetadataExtractor.swift in Sources */,
 				CB95D08E2AA6545D00B56740 /* CongoMasoloApp.swift in Sources */,
+				CB95D0E32AA7221500B56740 /* FRadioPlayer.swift in Sources */,
+				CB95D0C52AA715F400B56740 /* StationsManager.swift in Sources */,
+				CB95D0DC2AA7221500B56740 /* FRadioPlayer+Metadata.swift in Sources */,
+				CB95D0E42AA7221500B56740 /* FRadioPlayer+State.swift in Sources */,
 				CB95D0B82AA7137700B56740 /* Config.swift in Sources */,
+				CB95D0C22AA7157200B56740 /* AppDelegate.swift in Sources */,
+				CB95D0C92AA716CD00B56740 /* UIImage+Cache.swift in Sources */,
 				CB95D0BB2AA713AE00B56740 /* Bundle+Extensions.swift in Sources */,
+				CB95D0E22AA7221500B56740 /* FRadioArtworkAPI.swift in Sources */,
+				CB95D0E02AA7221500B56740 /* FRadioArtworkAPI+iTunes.swift in Sources */,
+				CB95D0E92AA722F700B56740 /* DataManager.swift in Sources */,
+				CB95D0DB2AA7221500B56740 /* FRadioPlayer+PlaybackState.swift in Sources */,
+				CB95D0E12AA7221500B56740 /* FRadioPlayerObserver.swift in Sources */,
+				CB95D0DD2AA7221500B56740 /* FRadioPlayer+Observation.swift in Sources */,
+				CB95D0DF2AA7221500B56740 /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
