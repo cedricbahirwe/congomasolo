@@ -37,6 +37,7 @@
 		CB95D0F62AA73A1C00B56740 /* StationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0F52AA73A1C00B56740 /* StationRow.swift */; };
 		CB95D0F82AA73F2300B56740 /* RadioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0F72AA73F2300B56740 /* RadioPlayerView.swift */; };
 		CB95D0FA2AA73F5B00B56740 /* RadionStations+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0F92AA73F5B00B56740 /* RadionStations+Preview.swift */; };
+		CB95D0FC2AA7653400B56740 /* RadioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0FB2AA7653400B56740 /* RadioPlayerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		CB95D0F52AA73A1C00B56740 /* StationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationRow.swift; sourceTree = "<group>"; };
 		CB95D0F72AA73F2300B56740 /* RadioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerView.swift; sourceTree = "<group>"; };
 		CB95D0F92AA73F5B00B56740 /* RadionStations+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RadionStations+Preview.swift"; sourceTree = "<group>"; };
+		CB95D0FB2AA7653400B56740 /* RadioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				CB95D0C42AA715F400B56740 /* StationsManager.swift */,
+				CB95D0FB2AA7653400B56740 /* RadioPlayerManager.swift */,
 				CB95D0C62AA7161400B56740 /* RadioStation.swift */,
 			);
 			path = Model;
@@ -429,6 +432,7 @@
 				CB95D0BB2AA713AE00B56740 /* Bundle+Extensions.swift in Sources */,
 				CB95D0FA2AA73F5B00B56740 /* RadionStations+Preview.swift in Sources */,
 				CB95D0E22AA7221500B56740 /* FRadioArtworkAPI.swift in Sources */,
+				CB95D0FC2AA7653400B56740 /* RadioPlayerManager.swift in Sources */,
 				CB95D0E02AA7221500B56740 /* FRadioArtworkAPI+iTunes.swift in Sources */,
 				CB95D0F82AA73F2300B56740 /* RadioPlayerView.swift in Sources */,
 				CB95D0E92AA722F700B56740 /* DataManager.swift in Sources */,

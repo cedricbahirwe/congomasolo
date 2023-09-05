@@ -16,12 +16,12 @@ struct StationRow: View {
         HStack {
             (image ?? Image("stationImage"))
                 .resizable()
-                .scaledToFit()
+                .scaledToFill()
                 .frame(maxWidth: 120)
                 .frame(height: 75)
-                .cornerRadius(20)
+                .clipped()
                 .shadow(color: .black,
-                        radius: 2,
+                        radius: 0.5,
                         x: 0, y: 1)
             
             VStack(alignment: .leading) {
