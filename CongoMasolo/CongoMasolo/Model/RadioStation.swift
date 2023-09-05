@@ -8,7 +8,8 @@
 import UIKit
 //import FRadioPlayer
 
-struct RadioStation: Equatable, Codable {
+struct RadioStation: Identifiable, Equatable, Codable {
+    var id: String { streamURL }
     var name: String
     var streamURL: String
     var imageURL: String

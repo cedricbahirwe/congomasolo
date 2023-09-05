@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct CongoMasoloApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
+    @StateObject var stationsVM = StationsViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(stationsVM)
         }
     }
 }

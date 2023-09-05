@@ -48,23 +48,23 @@ class StationsManager {
         self.player.addObserver(self)
     }
 
-    func fetch(_ completion: StationsCompletion? = nil) {
-        DataManager.getStation { [weak self] result in
-            guard case .success(let stations) = result, self?.stations != stations else {
-                completion?(result)
-                return
+    func fetch() async throws -> [RadioStation] {
+        do {
+            let result = try await DataManager.getStations()
+            guard stations != result else {
+                return result
             }
-
-            self?.stations = stations
-            self?.stations[0].streamURL = "https://n08a-eu.rcs.revma.com/u98b8f5q54zuv"//
-            //"http://37.59.42.207:8080/"// "https://topcongofm2.ice.infomaniak.ch/topcongofm2-64.mp3"//  "http://rs1.radiostreamer.com:8000/listen.pls"// "http://stream.zeno.fm/y9y2bhvzs4zuv"
-
+            
+            self.stations = result
+            
             // Reset everything if the new stations list doesn't have the current station
-            if let currentStation = self?.currentStation, self?.stations.firstIndex(of: currentStation) == nil {
-                self?.reset()
+            if let currentStation = self.currentStation, self.stations.firstIndex(of: currentStation) == nil {
+                self.reset()
             }
-
-            completion?(result)
+            
+            return result
+        } catch {
+            throw error
         }
     }
 
