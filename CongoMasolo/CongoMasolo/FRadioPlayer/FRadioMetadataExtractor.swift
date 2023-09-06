@@ -8,15 +8,15 @@
 import AVFoundation
 
 public protocol FRadioMetadataExtractor {
-    func extract(from groups: [AVTimedMetadataGroup]) -> FRadioPlayer.Metadata?
+    func extract(from groups: [AVTimedMetadataGroup]) async -> FRadioPlayer.Metadata?
 }
 
 // Default implementation
 struct DefaultMetadataExtractor: FRadioMetadataExtractor {
-    func extract(from groups: [AVTimedMetadataGroup]) -> FRadioPlayer.Metadata? {
+    func extract(from groups: [AVTimedMetadataGroup]) async -> FRadioPlayer.Metadata? {
         guard !groups.isEmpty else { return nil }
         
-        let rawValue = groups.first?.items.first?.value as? String
+        let rawValue = try? await groups.first?.items.first?.load(.value) as? String
         let rawValueCleaned = cleanRawMetadataIfNeeded(rawValue)
         let parts = rawValueCleaned?.components(separatedBy: " - ")
         

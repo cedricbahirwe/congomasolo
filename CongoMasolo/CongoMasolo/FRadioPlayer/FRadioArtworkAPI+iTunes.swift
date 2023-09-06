@@ -1,10 +1,3 @@
-//
-//  FRadioArtworkAPI+iTunes.swift
-//  Pods
-//
-//  Created by Fethi El Hassasna on 2021-10-19.
-//
-
 import Foundation
 import UIKit
 
@@ -19,28 +12,24 @@ public struct iTunesAPI: FRadioArtworkAPI {
         self.session = session
     }
     
-    public func getArtwork(for metadata: FRadioPlayer.Metadata, _ completion: @escaping (URL?) -> Void) {
+    
+    public func getArtwork(for metadata: FRadioPlayer.Metadata) async -> URL? {
         
         guard !metadata.isEmpty, let rawValue = metadata.rawValue, let url = getURL(with: rawValue) else {
-            completion(nil)
-            return
+            return nil
         }
         
-        let task = session.dataTask(with: url) { (data, response, error) in
-            guard error == nil, let data = data else {
-                completion(nil)
-                return
-            }
-                        
-            guard let response = try? JSONDecoder().decode(iTunesResponse.self, from: data), let artworkURL = response.results.first?.artworkURL(for: artworkSize) else {
-                completion(nil)
-                return
+        do {
+            let (data, _) = try await session.data(from: url)
+            guard let response = try? JSONDecoder().decode(iTunesResponse.self, from: data),
+                  let artworkURL = response.results.first?.artworkURL(for: artworkSize) else {
+                return nil
             }
             
-            completion(artworkURL)
+            return artworkURL
+        } catch {
+            return nil
         }
-        
-        task.resume()
     }
     
     
