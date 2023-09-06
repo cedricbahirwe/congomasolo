@@ -72,8 +72,12 @@ final class StationsViewModel: ObservableObject {
             playingTitle += station.trackName + " - " + station.artistName
         }
         
-        stationNowPlayingButtonTitle = playingTitle
-        stationNowPlayingButtonEnabled = true
+        DispatchQueue.main.async { [weak self] in
+            
+            
+            self?.stationNowPlayingButtonTitle = playingTitle
+            self?.stationNowPlayingButtonEnabled = true
+        }
     }
 }
 
@@ -81,7 +85,6 @@ final class StationsViewModel: ObservableObject {
 extension StationsViewModel: FRadioPlayerObserver {
     
     func radioPlayer(_ player: FRadioPlayer, playbackStateDidChange state: FRadioPlayer.PlaybackState) {
-//        startNowPlayingAnimation(player.isPlaying)
     }
     
     func radioPlayer(_ player: FRadioPlayer, metadataDidChange metadata: FRadioPlayer.Metadata?) {

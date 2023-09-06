@@ -10,6 +10,7 @@ import UIKit
 enum ShareSheet {
     
     static func shareRadioStation(station: RadioStation, artworkURL: URL?) {
+        
         Task {
             let imagePreview = await getImage(station: station, artworkURL: artworkURL)
             
@@ -20,10 +21,28 @@ enum ShareSheet {
                 trackTitle: station.trackName,
                 trackArtist: station.artistName)
             
-            let stationPreviewImage = radioPreview.snapshot()
-            let activityVC = await UIActivityViewController(activityItems: [stationPreviewImage], applicationActivities: nil)
-            await UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                presentShareSheet(radioPreview)
+            }
+            
         }
+    }
+    
+    private static func presentShareSheet(_ radioPreview: StationSharePreview) {
+        let keyWindow = UIApplication.shared.connectedScenes
+            .filter({$0.activationState == .foregroundActive})
+            .compactMap({$0 as? UIWindowScene})
+            .first?.windows
+            .filter({$0.isKeyWindow})
+            .first
+        let stationPreviewImage = radioPreview.snapshot()
+        let activityVC = UIActivityViewController(activityItems: [radioPreview.radioShoutout, stationPreviewImage], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = keyWindow?.rootViewController?.view
+        //Setup share activity position on screen on bottom center
+        activityVC.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height, width: 0, height: 0)
+        activityVC.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.down
+        
+        keyWindow?.rootViewController?.present(activityVC, animated: true)
     }
     
     private static func getImage(station: RadioStation, artworkURL: URL?) async -> UIImage {
