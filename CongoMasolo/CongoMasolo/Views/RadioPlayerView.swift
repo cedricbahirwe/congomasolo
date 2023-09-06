@@ -113,49 +113,58 @@ struct RadioPlayerView: View {
                     }
                 }
                 .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .minimumScaleFactor(0.7)
                 .animation(.easeInOut, value: radioManager.playingButtonSelected)
                 
                 Spacer()
                 
-                HStack {
+                HStack(alignment: .center) {
                     Image("appicon")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 40, height: 40)
-                        .cornerRadius(10)
+                        .frame(width: 30, height: 30)
+                        .cornerRadius(6)
                         .onTapGesture {
                             showAboutView = true
                         }
                     
-                    Spacer()
                     
-                    AirPlayButton()
-                        .frame(width: 45, height: 45)
+                    Spacer(minLength: 0)
                     
-                    Spacer()
-                    
-                    HStack(alignment: .bottom, spacing: 15) {
+                    HStack(alignment: .center, spacing: 20) {
                         Button {
                             
                         } label: {
                             Image(systemName: "square.and.arrow.up")
-                                .imageScale(.large)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
                         }
                         
                         if let station = radioManager.currentStation {
-                            Button {
-                                
+                            NavigationLink {
+                                RadionInfoView(station: station)
                             } label: {
-                                NavigationLink {
-                                    RadionInfoView(station: station)
-                                } label: {
-                                    Image(systemName: "info.circle")
-                                        .imageScale(.large)
-                                }
+                                Image(systemName: "info")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 18, height: 18)
+                                    .padding(4)
+                                    .overlay {
+                                        Circle()
+                                            .stroke(Color.white, lineWidth: 1.5)
+                                    }
+                                    .frame(width: 30, height: 30)
                             }
                         }
                         
                     }
+                }
+                .overlay(alignment: .center) {
+                    AirPlayButton()
+                        .frame(width: 35, height: 35)
+                        .scaleEffect(1.4)
                 }
             }
             .padding()
@@ -166,13 +175,6 @@ struct RadioPlayerView: View {
                       updateHandoffUserActivity)
         .navigationTitle(radioManager.stationTitle ?? "")
         .navigationBarTitleDisplayMode(.inline)
-//        .toolbar {
-//            Button {
-//                
-//            } label: {
-//                Label("Now Playing", image: "NowPlayingBars-3")
-//            }
-//        }
     }
     
     private func updateHandoffUserActivity(station: RadioStation, _ activity: NSUserActivity) {
@@ -187,6 +189,7 @@ struct RadioPlayerView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             RadioPlayerView(.example)
+                .preferredColorScheme(.dark)
         }
     }
 }

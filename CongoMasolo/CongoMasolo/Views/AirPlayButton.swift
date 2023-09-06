@@ -29,16 +29,15 @@ fileprivate class AirPLayViewController: UIViewController {
         let boldSearch = UIImage(systemName: "airplayaudio", withConfiguration: boldConfig)
         
         button.setImage(boldSearch, for: .normal)
-        button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         button.tintColor = .tintColor
         
-        button.addTarget(self, action: #selector(self.showAirPlayMenu(_:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(showAirPlayMenu(_:)), for: .touchUpInside)
         self.view.addSubview(button)
     }
     
-    @objc func showAirPlayMenu(_ sender: UIButton) {
-        let rect = CGRect(x: 0, y: 0, width: 0, height: 0)
-        let airplayVolume = MPVolumeView(frame: rect)
+    @objc private func showAirPlayMenu(_ sender: UIButton) {
+        let airplayVolume = MPVolumeView(frame: .zero)
         airplayVolume.showsVolumeSlider = false
         self.view.addSubview(airplayVolume)
         for view: UIView in airplayVolume.subviews {
