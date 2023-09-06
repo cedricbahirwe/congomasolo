@@ -185,19 +185,21 @@ extension StationsManager: FRadioPlayerObserver {
         resetArtwork(with: currentStation)
     }
 
-    func radioPlayer(_ player: FRadioPlayer, artworkDidChange artworkURL: URL?) async {
-
+    func radioPlayer(_ player: FRadioPlayer, artworkDidChange artworkURL: URL?) {
+        
         guard let artworkURL = artworkURL else {
             resetArtwork(with: currentStation)
             return
         }
-
         
-        if let image = await UIImage.image(from: artworkURL) {
-            self.updateLockScreen(with: image)
-        } else {
-            self.resetArtwork(with: currentStation)
-            return
+        Task { @MainActor in
+            
+            if let image = await UIImage.image(from: artworkURL) {
+                self.updateLockScreen(with: image)
+            } else {
+                self.resetArtwork(with: currentStation)
+                return
+            }
         }
     }
 }
