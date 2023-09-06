@@ -10,7 +10,6 @@ import AVKit
 
 struct RadioPlayerView: View {
     @StateObject private var radioManager: RadioPlayerManager
-    @State private var showAboutView = false
     
     init(_ station: RadioStation?) {
         self._radioManager = StateObject(wrappedValue: RadioPlayerManager(station))
@@ -126,23 +125,24 @@ struct RadioPlayerView: View {
                         .frame(width: 30, height: 30)
                         .cornerRadius(6)
                         .onTapGesture {
-                            showAboutView = true
+                            radioManager.handleCompanyButton()
                         }
                     
                     
                     Spacer(minLength: 0)
                     
                     HStack(alignment: .center, spacing: 20) {
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "square.and.arrow.up")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 30, height: 30)
-                        }
-                        
                         if let station = radioManager.currentStation {
+                            Button {
+                                radioManager.shareButtonPressed()
+                            } label: {
+                                Image(systemName: "square.and.arrow.up")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 30, height: 30)
+                            }
+                            
+                            
                             NavigationLink {
                                 RadionInfoView(station: station)
                             } label: {
@@ -169,7 +169,7 @@ struct RadioPlayerView: View {
             }
             .padding()
         }
-        .sheet(isPresented: $showAboutView, content: AboutView.init)
+        .sheet(isPresented: $radioManager.showAboutView, content: AboutView.init)
         .userActivity(Config.radioActivity,
                       element: radioManager.currentStation,
                       updateHandoffUserActivity)

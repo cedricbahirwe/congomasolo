@@ -44,6 +44,9 @@
 		CB95D1002AA78EE400B56740 /* RadionInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D0FF2AA78EE400B56740 /* RadionInfoView.swift */; };
 		CB95D1022AA7A23500B56740 /* BlurredBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D1012AA7A23500B56740 /* BlurredBackground.swift */; };
 		CB95D1042AA7A24A00B56740 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB95D1032AA7A24A00B56740 /* MailView.swift */; };
+		CBBEABEF2AA892D400A0D0B6 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBEABEE2AA892D400A0D0B6 /* ShareSheet.swift */; };
+		CBBEABF32AA8960800A0D0B6 /* StationSharePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBEABF22AA8960800A0D0B6 /* StationSharePreview.swift */; };
+		CBBEABF52AA8AA7100A0D0B6 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBEABF42AA8AA7100A0D0B6 /* View+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,9 @@
 		CB95D0FF2AA78EE400B56740 /* RadionInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadionInfoView.swift; sourceTree = "<group>"; };
 		CB95D1012AA7A23500B56740 /* BlurredBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredBackground.swift; sourceTree = "<group>"; };
 		CB95D1032AA7A24A00B56740 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		CBBEABEE2AA892D400A0D0B6 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		CBBEABF22AA8960800A0D0B6 /* StationSharePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSharePreview.swift; sourceTree = "<group>"; };
+		CBBEABF42AA8AA7100A0D0B6 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				CB95D0BA2AA713AE00B56740 /* Bundle+Extensions.swift */,
+				CBBEABF42AA8AA7100A0D0B6 /* View+Extensions.swift */,
+				CBBEABEE2AA892D400A0D0B6 /* ShareSheet.swift */,
 				CB95D0C82AA716CD00B56740 /* UIImage+Cache.swift */,
 			);
 			path = Helper;
@@ -271,6 +279,7 @@
 				CB95D0FF2AA78EE400B56740 /* RadionInfoView.swift */,
 				CB8212702AA7C8E4001B7A85 /* VolumeSliderView.swift */,
 				CB95D0F22AA739FD00B56740 /* Rows */,
+				CBBEABF22AA8960800A0D0B6 /* StationSharePreview.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -441,6 +450,7 @@
 				CB95D0E42AA7221500B56740 /* FRadioPlayer+State.swift in Sources */,
 				CB95D0B82AA7137700B56740 /* Config.swift in Sources */,
 				CB95D0F62AA73A1C00B56740 /* StationRow.swift in Sources */,
+				CBBEABF32AA8960800A0D0B6 /* StationSharePreview.swift in Sources */,
 				CB95D0C22AA7157200B56740 /* AppDelegate.swift in Sources */,
 				CB95D0C92AA716CD00B56740 /* UIImage+Cache.swift in Sources */,
 				CB95D0BB2AA713AE00B56740 /* Bundle+Extensions.swift in Sources */,
@@ -449,6 +459,8 @@
 				CB95D0E22AA7221500B56740 /* FRadioArtworkAPI.swift in Sources */,
 				CB95D1042AA7A24A00B56740 /* MailView.swift in Sources */,
 				CB95D0FC2AA7653400B56740 /* RadioPlayerManager.swift in Sources */,
+				CBBEABF52AA8AA7100A0D0B6 /* View+Extensions.swift in Sources */,
+				CBBEABEF2AA892D400A0D0B6 /* ShareSheet.swift in Sources */,
 				CB95D0E02AA7221500B56740 /* FRadioArtworkAPI+iTunes.swift in Sources */,
 				CB95D0F82AA73F2300B56740 /* RadioPlayerView.swift in Sources */,
 				CB95D0E92AA722F700B56740 /* DataManager.swift in Sources */,
