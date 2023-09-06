@@ -89,7 +89,6 @@ extension StationsViewModel: FRadioPlayerObserver {
     
     func radioPlayer(_ player: FRadioPlayer, metadataDidChange metadata: FRadioPlayer.Metadata?) {
         updateNowPlayingButton(station: manager.currentStation)
-//        updateHandoffUserActivity(userActivity, station: manager.currentStation)
     }
 }
 
