@@ -383,10 +383,10 @@
 			};
 			buildConfigurationList = CB95D0852AA6545D00B56740 /* Build configuration list for PBXProject "CongoMasolo" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = fr;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
+				fr,
 				Base,
 			);
 			mainGroup = CB95D0812AA6545D00B56740;
