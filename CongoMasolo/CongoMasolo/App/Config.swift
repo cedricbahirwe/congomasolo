@@ -19,6 +19,8 @@ struct Config {
     #endif
 
     static let stationsURL = "https://cedricbahirwe.github.io/html/radio/stations.json"
+    
+    static let appStoreURL = "https://apps.apple.com/us/app/congomasolo/id6464499950"
 
     // Set this to "true" to enable the search bar
     static let searchable = false

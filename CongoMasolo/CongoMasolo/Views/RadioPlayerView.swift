@@ -45,7 +45,7 @@ struct RadioPlayerView: View {
                                 .opacity(0.8)
                         }
                     }
-                    .padding(.top, 50)
+                    .padding(.top, 30)
                 
                 
                 HStack(spacing: 12) {

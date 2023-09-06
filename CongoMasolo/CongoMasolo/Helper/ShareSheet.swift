@@ -36,7 +36,9 @@ enum ShareSheet {
             .filter({$0.isKeyWindow})
             .first
         let stationPreviewImage = radioPreview.snapshot()
-        let activityVC = UIActivityViewController(activityItems: [radioPreview.radioShoutout, stationPreviewImage], applicationActivities: nil)
+        
+        let promoMessage = radioPreview.radioShoutout + ".\nTéléchargez l'appli sur \(Config.appStoreURL)"
+        let activityVC = UIActivityViewController(activityItems: [promoMessage, stationPreviewImage], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = keyWindow?.rootViewController?.view
         //Setup share activity position on screen on bottom center
         activityVC.popoverPresentationController?.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height, width: 0, height: 0)

@@ -28,7 +28,7 @@ struct RadioStation: Identifiable, Hashable, Codable {
 
 extension RadioStation {
     var shoutout: String {
-        "I'm listening to \(name) via \(Bundle.main.appName) app"
+        "J'écoute \(name) via l'application \(Bundle.main.appName)"
     }
 }
 

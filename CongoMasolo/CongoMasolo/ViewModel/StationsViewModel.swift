@@ -67,7 +67,7 @@ final class StationsViewModel: ObservableObject {
         var playingTitle = station.name + ": "
         
         if player.currentMetadata == nil {
-            playingTitle += "Now playing ..."
+            playingTitle += "En cours de lecture ..."
         } else {
             playingTitle += station.trackName + " - " + station.artistName
         }
