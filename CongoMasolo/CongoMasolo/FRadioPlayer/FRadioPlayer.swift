@@ -318,9 +318,14 @@ open class FRadioPlayer: NSObject {
             return
         }
         
-        Task {
-            self.currentArtworkURL = await artworkAPI.getArtwork(for: metadata)
+        artworkAPI.getArtwork(for: metadata) { [weak self] artworlURL in
+            DispatchQueue.main.async {
+                self?.currentArtworkURL = artworlURL
+            }
         }
+//        Task {
+//            self.currentArtworkURL = await artworkAPI.getArtwork(for: metadata)
+//        }
     }
     
     private func reloadItem() {
@@ -480,11 +485,14 @@ open class FRadioPlayer: NSObject {
 }
 
 extension FRadioPlayer: AVPlayerItemMetadataOutputPushDelegate {
-    
-    public func metadataOutput(_ output: AVPlayerItemMetadataOutput, didOutputTimedMetadataGroups groups: [AVTimedMetadataGroup], from track: AVPlayerItemTrack?) async {
+    public func metadataOutput(_ output: AVPlayerItemMetadataOutput, didOutputTimedMetadataGroups groups: [AVTimedMetadataGroup], from track: AVPlayerItemTrack?) {
         
-        currentMetadata = await metadataExtractor.extract(from: groups)
+        currentMetadata = metadataExtractor.extract(from: groups)
     }
+//    public func metadataOutput(_ output: AVPlayerItemMetadataOutput, didOutputTimedMetadataGroups groups: [AVTimedMetadataGroup], from track: AVPlayerItemTrack?) async {
+//
+//        currentMetadata = await metadataExtractor.extract(from: groups)
+//    }
 }
 
 private extension FRadioPlayer {
