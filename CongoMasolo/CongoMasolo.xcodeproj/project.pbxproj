@@ -165,13 +165,11 @@
 			children = (
 				CB95D0BC2AA713C600B56740 /* Info.plist */,
 				CB95D0C02AA7156B00B56740 /* App */,
-				CB95D08F2AA6545D00B56740 /* ContentView.swift */,
 				CB8FABBE2AA7AAE700AD1AE9 /* ViewModel */,
 				CB95D0ED2AA72D8000B56740 /* Data */,
 				CB95D0EA2AA72B9600B56740 /* Views */,
-				CB95D0CE2AA7220600B56740 /* FMRadioPlayer */,
+				CB95D0D02AA7221500B56740 /* FRadioPlayer */,
 				CB95D0C32AA715E200B56740 /* Model */,
-				CB95D0B72AA7137700B56740 /* Config.swift */,
 				CB95D0E52AA722E000B56740 /* Networking */,
 				CB95D0B92AA7139800B56740 /* Helper */,
 				CB95D0912AA6546000B56740 /* Assets.xcassets */,
@@ -218,6 +216,7 @@
 		CB95D0C02AA7156B00B56740 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CB95D0B72AA7137700B56740 /* Config.swift */,
 				CB95D08D2AA6545D00B56740 /* CongoMasoloApp.swift */,
 				CB95D0C12AA7157200B56740 /* AppDelegate.swift */,
 			);
@@ -232,22 +231,6 @@
 				CB95D0C62AA7161400B56740 /* RadioStation.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		CB95D0CE2AA7220600B56740 /* FMRadioPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				CB95D0CF2AA7221500B56740 /* Sources */,
-			);
-			path = FMRadioPlayer;
-			sourceTree = "<group>";
-		};
-		CB95D0CF2AA7221500B56740 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				CB95D0D02AA7221500B56740 /* FRadioPlayer */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 		CB95D0D02AA7221500B56740 /* FRadioPlayer */ = {
@@ -278,7 +261,7 @@
 		CB95D0EA2AA72B9600B56740 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CB95D0F22AA739FD00B56740 /* Rows */,
+				CB95D08F2AA6545D00B56740 /* ContentView.swift */,
 				CB95D0EB2AA72BA300B56740 /* StationsView.swift */,
 				CB95D0F72AA73F2300B56740 /* RadioPlayerView.swift */,
 				CB95D0FD2AA76E8B00B56740 /* AirPlayButton.swift */,
@@ -287,6 +270,7 @@
 				CB95D1012AA7A23500B56740 /* BlurredBackground.swift */,
 				CB95D0FF2AA78EE400B56740 /* RadionInfoView.swift */,
 				CB8212702AA7C8E4001B7A85 /* VolumeSliderView.swift */,
+				CB95D0F22AA739FD00B56740 /* Rows */,
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -11,10 +11,10 @@ import Foundation
 @MainActor
 final class StationsViewModel: ObservableObject {
     @Published var stations: [RadioStation] = []
-    
     @Published var activityIndicator = ActivityIndicator()
-    
     @Published var errorMessage: String?
+    @Published var stationNowPlayingButtonTitle = "Sélectionnez une station pour commencer"
+    @Published var stationNowPlayingButtonEnabled = false
     
     private let manager = StationsManager.shared
     private let player = FRadioPlayer.shared
@@ -51,12 +51,8 @@ final class StationsViewModel: ObservableObject {
         }
     }
     
-    @Published var stationNowPlayingButtonTitle = "Sélectionnez une station pour commencer"
-    @Published var stationNowPlayingButtonEnabled = false
-    
     // Reset all properties to default
     private func resetCurrentStation() {
-//        nowPlayingAnimationImageView.stopAnimating()
         stationNowPlayingButtonTitle = "Sélectionnez une station pour commencer"
         stationNowPlayingButtonEnabled = false
     }
