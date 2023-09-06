@@ -88,7 +88,7 @@ struct StationsView: View {
     private var placeholderView: some View {
         GroupBox {
             ForEach(0..<10, id: \.self) { _ in
-                StationRow(station: .example)
+                StationRow(station: RadioStation(name: "", streamURL: "", imageURL: "", desc: "", longDesc: "", wesbite: ""))
             }
         }
         .redacted(reason: .placeholder)

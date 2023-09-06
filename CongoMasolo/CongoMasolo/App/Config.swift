@@ -12,17 +12,12 @@ struct Config {
     
     #if DEBUG
     static let debugLog = true
-    #else
-    static let debugLog = false
-    #endif
-
-    // If this is set to "true", it will use the JSON file in the app
-    // Set it to "false" to use the JSON file at the stationDataURL
-    #if DEBUG
     static let useLocalStations = true
     #else
+    static let debugLog = false
     static let useLocalStations = false
     #endif
+
     static let stationsURL = "https://cedricbahirwe.github.io/html/radio/stations.json"
 
     // Set this to "true" to enable the search bar
