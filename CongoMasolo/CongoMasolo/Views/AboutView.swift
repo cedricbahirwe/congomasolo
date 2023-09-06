@@ -48,8 +48,11 @@ struct AboutView: View {
                         Link("- Aristote Mokekwa \(Image(systemName: "arrow.up.right.square"))", destination: URL(string: Config.aristoteInsta)!)
                         
                         Link("- Fethi El Hassasna \(Image(systemName: "arrow.up.right.square"))", destination: URL(string: Config.sdkLink)!)
+                        
+                        Text("- La Famille Bahirwe")
                     }
                     .foregroundColor(Color.blue)
+                  
                 }
                 .padding()
                 .frame(maxWidth: .infinity, alignment: .leading)
