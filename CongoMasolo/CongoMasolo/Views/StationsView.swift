@@ -18,15 +18,29 @@ struct StationsView: View {
     var body: some View {
         NavigationStack {
             List {
-                if let error = stationsVM.errorMessage {
+                if stationsVM.activityIndicator.isAnimating() {
+                    placeholderView
+                } else {
+                    ForEach(stationsVM.stations) { station in
+                        NavigationLink(value: station) {
+                            StationRow(station: station)
+                        }
+                    }
+                }
+            }
+            .overlay {
+                if stationsVM.activityIndicator.isAnimating() {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                        .padding(20)
+                        .background(.regularMaterial)
+                        .cornerRadius(15)
+                        .scaleEffect(2)
+                } else if let error = stationsVM.errorMessage {
                     Text(error)
                         .fontWeight(.medium)
                         .foregroundColor(.red)
-                }
-                ForEach(stationsVM.stations) { station in
-                    NavigationLink(value: station) {
-                        StationRow(station: station)
-                    }
+                        .padding()
                 }
             }
             .navigationTitle("Masolo Radio")
@@ -52,7 +66,6 @@ struct StationsView: View {
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    
                     if stationsVM.stationNowPlayingButtonEnabled {
                         NavigationLink {
                             RadioPlayerView(stationsVM.currentStation)
@@ -64,38 +77,49 @@ struct StationsView: View {
                 }
             }
             .safeAreaInset(edge: .bottom) {
-                NavigationLink {
-                    RadioPlayerView(stationsVM.currentStation)
-                } label: {
-                    
-                    HStack(spacing: 8) {
-                        Image("NowPlayingBars")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
-                        
-                        Text(stationsVM.stationNowPlayingButtonTitle)
-                        Spacer()
-                    }
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.6)
-                    .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .frame(height: 44)
-                    .background(
-                        Color.black
-                            .ignoresSafeArea(edges: .bottom)
-                    )
-                    .containerShape(Rectangle())
-                }
-                .disabled(stationsVM.currentStation==nil)
-            
+                bottomBarView
             }
             .task {
                 await stationsVM.fetchStations()
             }
         }
+    }
+    
+    private var placeholderView: some View {
+        GroupBox {
+            ForEach(0..<10, id: \.self) { _ in
+                StationRow(station: .example)
+            }
+        }
+        .redacted(reason: .placeholder)
+    }
+    
+    private var bottomBarView: some View {
+        NavigationLink {
+            RadioPlayerView(stationsVM.currentStation)
+        } label: {
+            HStack(spacing: 8) {
+                Image("NowPlayingBars")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20, height: 20)
+                
+                Text(stationsVM.stationNowPlayingButtonTitle)
+                Spacer()
+            }
+            .lineLimit(1)
+            .minimumScaleFactor(0.6)
+            .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
+            .frame(maxWidth: .infinity)
+            .padding()
+            .frame(height: 44)
+            .background(
+                Color.black
+                    .ignoresSafeArea(edges: .bottom)
+            )
+            .containerShape(Rectangle())
+        }
+        .disabled(stationsVM.currentStation==nil)
     }
 
 }

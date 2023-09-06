@@ -30,7 +30,7 @@ final class StationsViewModel: ObservableObject {
         activityIndicator.start()
         
         do {
-            let resultStations = try await manager.fetch()
+            let resultStations = try await manager.fetchStations()
             activityIndicator.stop()
             
             self.stations = resultStations

@@ -12,18 +12,18 @@ struct StationRow: View {
     @State private var image: Image?
     
     var body: some View {
-        HStack {
+        HStack(spacing: 8) {
             (image ?? Image("stationImage"))
                 .resizable()
                 .scaledToFill()
-                .frame(maxWidth: 120)
+                .frame(maxWidth: 110)
                 .frame(height: 75)
-                .clipped()
+                .cornerRadius(5)
                 .shadow(color: .black,
                         radius: 0.5,
                         x: 0, y: 1)
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 8) {
                 Text(station.name)
                     .font(.headline)
                 
@@ -32,7 +32,7 @@ struct StationRow: View {
             }
         }
         .task {
-            self.image = Image(uiImage: await station.getImage())
+            image = Image(uiImage: await station.getImage())
         }
     }
 }

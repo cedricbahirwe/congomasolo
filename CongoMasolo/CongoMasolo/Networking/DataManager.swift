@@ -7,8 +7,23 @@
 
 import Foundation
 
-enum DataError: Error {
+enum DataError: LocalizedError {
     case urlNotValid, dataNotValid, dataNotFound, fileNotFound, httpResponseNotValid
+    
+    var errorDescription: String? {
+        switch self {
+        case .urlNotValid:
+            return "The provided URL is not valid. Please check the URL and try again."
+        case .dataNotValid:
+            return "The data received is not valid. Please try again later."
+        case .dataNotFound:
+            return "The requested data could not be found. Please check your connection and try again."
+        case .fileNotFound:
+            return "The file could not be found. Please make sure the file exists and try again."
+        case .httpResponseNotValid:
+            return "The server's response is not valid. Please try again later."
+        }
+    }
 }
 
 
@@ -17,10 +32,8 @@ enum DataError: Error {
 struct DataManager {
     static func getStations() async throws  -> [RadioStation] {
         if Config.useLocalStations {
-            let data = try await loadLocal()
-            return try await decode(data)
+            return try await decode(loadLocal())
         } else {
-            let data = try await loadHttp()
             return try await decode(loadHttp())
         }
     }

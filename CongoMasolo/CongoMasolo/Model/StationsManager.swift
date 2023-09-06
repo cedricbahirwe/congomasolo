@@ -48,7 +48,7 @@ class StationsManager {
         self.player.addObserver(self)
     }
 
-    func fetch() async throws -> [RadioStation] {
+    func fetchStations() async throws -> [RadioStation] {
         do {
             let result = try await DataManager.getStations()
             guard stations != result else {
@@ -199,14 +199,5 @@ extension StationsManager: FRadioPlayerObserver {
             self.resetArtwork(with: currentStation)
             return
         }
-        
-//        UIImage.image(from: artworkURL) { [weak self] image in
-//            guard let image = image else {
-//                self?.resetArtwork(with: self?.currentStation)
-//                return
-//            }
-//
-//            self?.updateLockScreen(with: image)
-//        }
     }
 }
