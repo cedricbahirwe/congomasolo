@@ -59,7 +59,6 @@ struct AboutView: View {
                 .background(.ultraThinMaterial)
                 .cornerRadius(15)
             }
-            Spacer()
             
             VStack(spacing: 15) {
                 Link(destination: URL(string:  Config.stationRequest)!) {
